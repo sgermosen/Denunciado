@@ -20,12 +20,16 @@ namespace DenunciadoWeb
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/datetimepicker/moment.js",
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/datetimepicker/bootstrap-datetimepicker.js",
+                       "~/Scripts/pS/fileupload.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/bootstrap-datetimepicker/bootstrap-datetimepicker.css"));
         }
     }
 }
