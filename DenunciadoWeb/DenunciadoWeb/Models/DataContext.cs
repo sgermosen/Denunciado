@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Web;
 
-namespace DenunciadoWeb.Models
+namespace DenunciadoBackEnd.Models
 {
     public class DataContext: DbContext
     {
@@ -20,5 +16,9 @@ namespace DenunciadoWeb.Models
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
 
         }
+
+        public DbSet<Complaint> Complaints { get; set; }
+        public DbSet<ComplaintType> ComplaintTypes { get; set; }
+
     }
 }

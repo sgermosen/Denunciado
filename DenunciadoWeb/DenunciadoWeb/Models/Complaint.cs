@@ -1,17 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DenunciadoWeb.Models
+namespace DenunciadoBackEnd.Models
 {
-    public class Complaints
+    public class Complaint
     {
         [Key]
         public int ComplaintId { get; set; }
-
-        [Required(ErrorMessage = "You must select a {0}")]
-        public int ComplaintTypeId { get; set; }
-
+       
         [Required(ErrorMessage = "you must choose a {0}")]
         public int UserId { get; set; }
 
@@ -35,6 +31,11 @@ namespace DenunciadoWeb.Models
         public decimal Lat { get; set; }
       
         public decimal Lon { get; set; }
+
+       // [Required(ErrorMessage = "You must select a {0}")]
+        public int ComplaintTypeId { get; set; }
+
+        public virtual ComplaintType ComplaintType { get; set; }
 
     }
 }
