@@ -56,8 +56,12 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
+            @if (!string.IsNullOrEmpty(Model.Image))
+            {
+                <img src="@Url.Content(Model.Image)" alt="Image" style="width:250px;height:250px;max-width: 100%; height: auto;" />
+            }
+            @*@Html.DisplayFor(model => model.Image)*@
+    </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.IsActive)

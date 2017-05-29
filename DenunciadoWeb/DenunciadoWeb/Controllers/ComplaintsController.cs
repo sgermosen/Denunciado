@@ -7,14 +7,20 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DenunciadoBackEnd.Models;
+using DenunciadoBackEnd.Classes;
 
 namespace DenunciadoBackEnd.Controllers
 {
     public class ComplaintsController : Controller
     {
-        private DataContext db = new DataContext();
+        private DataContext db ; //= new DataContext();
 
-        // GET: Complaints
+        public ComplaintsController()
+        {
+            db = new DataContext();
+        }
+
+
         public ActionResult Index()
         {
             //return View(db.Complaints.OrderBy(f => f.Description).ToList());
@@ -22,14 +28,14 @@ namespace DenunciadoBackEnd.Controllers
             return View(complaints.ToList());
         }
 
-        // GET: Complaints/Details/5
+      
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Complaint complaint = db.Complaints.Find(id);
+            var complaint = db.Complaints.Find(id);
             if (complaint == null)
             {
                 return HttpNotFound();
@@ -37,10 +43,10 @@ namespace DenunciadoBackEnd.Controllers
             return View(complaint);
         }
 
-        // GET: Complaints/Create
+       
         public ActionResult Create()
         {
-            ViewBag.ComplaintTypeId = new SelectList(db.ComplaintTypes, "ComplaintTypeId", "Code");
+            ViewBag.ComplaintTypeId = new SelectList(db.ComplaintTypes, "ComplaintTypeId", "Description");
             return View();
         }
 
@@ -49,17 +55,49 @@ namespace DenunciadoBackEnd.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ComplaintId,UserId,CreationDate,Address,Description,Image,IsActive,Lat,Lon,ComplaintTypeId")] Complaint complaint)
+        //  public ActionResult Create([Bind(Include = "ComplaintId,UserId,CreationDate,Address,Description,Image,IsActive,Lat,Lon,ComplaintTypeId")] Complaint complaint)
+        public ActionResult Create(ComplaintView view)
         {
             if (ModelState.IsValid)
             {
+
+                //db.Complaints.Add(complaint);
+                //db.SaveChanges();
+                //return RedirectToAction("Index");
+                var pic = string.Empty;
+                var folder = "~/Content/Images";
+
+                if (view.ImageFile != null)
+                {
+                    pic = FilesHelper.UploadPhoto(view.ImageFile, folder);
+                    pic = string.Format("{0}/{1}", folder, pic);
+                }
+                var complaint = ToComplaint(view);
+                complaint.Image = pic;
+                //db.Flowers.Add(flower);
                 db.Complaints.Add(complaint);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ComplaintTypeId = new SelectList(db.ComplaintTypes, "ComplaintTypeId", "Code", complaint.ComplaintTypeId);
-            return View(complaint);
+            ViewBag.ComplaintTypeId = new SelectList(db.ComplaintTypes, "ComplaintTypeId", "Description", view.ComplaintTypeId);
+            return View(view);//  complaint);
+        }
+        private Complaint ToComplaint(ComplaintView view)
+        {
+            return new Models.Complaint
+            {
+                ComplaintId = view.ComplaintId,
+                UserId = view.UserId,
+                CreationDate = view.CreationDate,
+                Address = view.Address,
+                Description = view.Description,
+                Image = view.Image,
+                IsActive = view.IsActive,
+                Lat = view.Lat,
+                Lon = view.Lon,
+                ComplaintTypeId = view.ComplaintTypeId,
+            };
         }
 
         // GET: Complaints/Edit/5
@@ -69,13 +107,31 @@ namespace DenunciadoBackEnd.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Complaint complaint = db.Complaints.Find(id);
+
+            var complaint = db.Complaints.Find(id);
+
             if (complaint == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.ComplaintTypeId = new SelectList(db.ComplaintTypes, "ComplaintTypeId", "Code", complaint.ComplaintTypeId);
-            return View(complaint);
+            ViewBag.ComplaintTypeId = new SelectList(db.ComplaintTypes, "ComplaintTypeId", "Description", complaint.ComplaintTypeId);
+            return View(ToView(complaint));
+        }
+        private ComplaintView ToView(Complaint complaint)
+        {
+            return new ComplaintView
+            {
+                ComplaintId = complaint.ComplaintId,
+                UserId = complaint.UserId,
+                CreationDate = complaint.CreationDate,
+                Address = complaint.Address,
+                Description = complaint.Description,
+                Image = complaint.Image,
+                IsActive = complaint.IsActive,
+                Lat = complaint.Lat,
+                Lon = complaint.Lon,
+                ComplaintTypeId = complaint.ComplaintTypeId,
+            };
         }
 
         // POST: Complaints/Edit/5
@@ -83,16 +139,32 @@ namespace DenunciadoBackEnd.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ComplaintId,UserId,CreationDate,Address,Description,Image,IsActive,Lat,Lon,ComplaintTypeId")] Complaint complaint)
+        // public ActionResult Edit([Bind(Include = "ComplaintId,UserId,CreationDate,Address,Description,Image,IsActive,Lat,Lon,ComplaintTypeId")] Complaint complaint)
+        public ActionResult Edit(ComplaintView view)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(complaint).State = EntityState.Modified;
+                var pic = view.Image; //la inicializo en la imagen vieja por si el no la cambio no la dañe
+                var folder = "~/Content/Images";
+
+                if (view.ImageFile != null)
+                {
+                    pic = FilesHelper.UploadPhoto(view.ImageFile, folder);
+                    pic = string.Format("{0}/{1}", folder, pic);
+                }
+
+                var flower = ToComplaint(view); //convertimos a vista
+                flower.Image = pic;
+                db.Entry(flower).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
+                //db.Entry(complaint).State = EntityState.Modified;
+                //db.SaveChanges();
+                //return RedirectToAction("Index");
             }
-            ViewBag.ComplaintTypeId = new SelectList(db.ComplaintTypes, "ComplaintTypeId", "Code", complaint.ComplaintTypeId);
-            return View(complaint);
+            ViewBag.ComplaintTypeId = new SelectList(db.ComplaintTypes, "ComplaintTypeId", "Description", view.ComplaintTypeId);
+           // return View(complaint);
+            return View(view);
         }
 
         // GET: Complaints/Delete/5

@@ -183,6 +183,7 @@
     <Compile Include="Classes\FilesHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ComplaintsController.cs" />
+    <Compile Include="Controllers\ComplaintTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -267,6 +268,11 @@
     <Content Include="Views\Complaints\Details.cshtml" />
     <Content Include="Views\Complaints\Edit.cshtml" />
     <Content Include="Views\Complaints\Index.cshtml" />
+    <Content Include="Views\ComplaintTypes\Create.cshtml" />
+    <Content Include="Views\ComplaintTypes\Delete.cshtml" />
+    <Content Include="Views\ComplaintTypes\Details.cshtml" />
+    <Content Include="Views\ComplaintTypes\Edit.cshtml" />
+    <Content Include="Views\ComplaintTypes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

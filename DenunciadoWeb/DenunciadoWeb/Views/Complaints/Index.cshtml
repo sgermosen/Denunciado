@@ -7,7 +7,9 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+
+    <a class="btn btn-primary" href="/Complaints/Create"> Create New <span class="glyphicon glyphicon-plus"></span> </a>
+    @*@Html.ActionLink("Create New", "Create")*@
 </p>
 <table class="table">
     <tr>
@@ -23,59 +25,73 @@
         <th>
             @Html.DisplayNameFor(model => model.Address)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Image)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IsActive)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lat)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Lon)
-        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Lat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lon)
+            </th>*@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ComplaintType.Code)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreationDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Image)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lon)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ComplaintId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ComplaintId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ComplaintId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ComplaintType.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>*@
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Image)
+                </td>*@
+            <td>
+                @if (!string.IsNullOrEmpty(item.Image))
+                {
+                    <img src="@Url.Content(item.Image)" alt="Image" style="width:100px;height:100px;max-width: 100%; height: auto;" />
+                }
+
+                @*@Html.DisplayFor(modelItem => item.Image)*@
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Lat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lon)
+                </td>*@
+            <td>
+                <a class="btn btn-warning" href="/Complaints/Edit/@item.ComplaintId"> Edit <span class="glyphicon glyphicon-edit"></span> </a>
+                <a class="btn btn-info" href="/Complaints/Details/@item.ComplaintId"> Details <span class="glyphicon glyphicon-exclamation-sign"></span> </a>
+                <a class="btn btn-danger" href="/Complaints/Delete/@item.ComplaintId"> Delete <span class="glyphicon glyphicon-trash"></span> </a>
+
+                @*@Html.ActionLink("Edit", "Edit", new {id = item.ComplaintId}) |
+                    @Html.ActionLink("Details", "Details", new {id = item.ComplaintId}) |
+                    @Html.ActionLink("Delete", "Delete", new {id = item.ComplaintId})*@
+            </td>
+        </tr>
+    }
 
 </table>
