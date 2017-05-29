@@ -180,6 +180,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Classes\FilesHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -188,7 +189,6 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Complaint.cs" />
-    <Compile Include="Models\ComplaintRequest.cs" />
     <Compile Include="Models\ComplaintsType.cs" />
     <Compile Include="Models\ComplaintView.cs" />
     <Compile Include="Models\DataContext.cs" />
@@ -267,6 +267,7 @@
     <Folder Include="Content\Images\" />
     <Folder Include="Content\pS\" />
     <Folder Include="Content\UserImages\" />
+    <Folder Include="Controllers\API\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
