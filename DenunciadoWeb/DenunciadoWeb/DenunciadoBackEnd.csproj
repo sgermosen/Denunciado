@@ -182,6 +182,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Classes\FilesHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\API\ComplaintsController.cs" />
     <Compile Include="Controllers\ComplaintsController.cs" />
     <Compile Include="Controllers\ComplaintTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -279,7 +280,6 @@
     <Folder Include="Content\Images\" />
     <Folder Include="Content\pS\" />
     <Folder Include="Content\UserImages\" />
-    <Folder Include="Controllers\API\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
