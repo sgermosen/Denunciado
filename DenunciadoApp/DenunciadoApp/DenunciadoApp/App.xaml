@@ -1,10 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DenunciadoApp.App">
-	<Application.Resources>
+             xmlns:infra="clr-namespace:ComplaintsApp.Infraestructure;assembly=ComplaintsApp"
+             x:Class="ComplaintsApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
+            <!--DataTemplates-->
+            <DataTemplate x:Key="ComplaintsDataTemplate">
+                <ViewCell>
+                    <Grid Padding="8">
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding EditComplaintCommand}">
+                            </TapGestureRecognizer>
+                        </Grid.GestureRecognizers>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto">
+                            </ColumnDefinition>
+                            <ColumnDefinition Width="*">
+                            </ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding ImageFullPath}"
+                               VerticalOptions="Start"
+                               WidthRequest="80"
+                               HeightRequest="80">
+                        </Image>
+                        <StackLayout Grid.Column="1">
+                            <Label FontSize="Medium"
+                                   FontAttributes="Bold"
+                                   VerticalOptions="Center"
+                                   Text="{Binding Description}">
+                            </Label>
+                            <Label VerticalOptions="Center"
+                                   Text="{Binding Price, StringFormat='Price: {0:C2}'}">
+                            </Label>
+                            <Label TextColor="Black"
+                                   VerticalOptions="Center"
+                                   Text="{Binding LastPurchase, StringFormat='Last Purchase: {0:yyy/MM/dd}'}">
+                            </Label>
+                            <StackLayout Orientation="Horizontal">
+                                <Label TextColor="Black"
+                                       HorizontalOptions="StartAndExpand"
+                                       Text="Is Active:">
+                                </Label>
+                                <Switch IsEnabled="False"
+                                        HorizontalOptions="End"
+                                        IsToggled="{Binding IsActive}">
+                                </Switch>
+                            </StackLayout>
 
-		<!-- Application resource dictionary -->
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
 
-	</Application.Resources>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

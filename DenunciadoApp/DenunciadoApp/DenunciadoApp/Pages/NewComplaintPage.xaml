@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ComplaintsApp.Pages.NewComplaintPage"
+             Title="New Complaint"
+             BackgroundColor="Silver"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ScrollView>
+        <StackLayout Padding="8"
+                     BindingContext="{Binding NewComplaint}">
+            <Label Text="Descripcion">
+            </Label>
+            <Entry BackgroundColor="White"
+                   Text="{Binding Description, Mode=TwoWay}"
+                   Placeholder="Entre una Descripcion...">
+            </Entry>
+            <Label Text="Price">
+            </Label>
+            <Entry BackgroundColor="White"
+                   Text="{Binding Price, Mode=TwoWay}"
+                   Keyboard="Numeric"
+                   Placeholder="Entre un Precio...">
+            </Entry>
+            <Label Text="Last Purchase">
+            </Label>
+            <DatePicker BackgroundColor="White"
+                        Date="{Binding LastPurchase,Mode=TwoWay}">
+            </DatePicker>
+            <Label Text="Is Active">
+            </Label>
+            <Switch IsToggled="{Binding IsActive,Mode=TwoWay}">
+            </Switch>
+            <Label Text="Observation">
+            </Label>
+            <Editor BackgroundColor="White"
+                    Text="{Binding Observation,Mode=TwoWay}">
+            </Editor>
+            <!--<ActivityIndicator
+            IsRunning="{Binding IsRunning, Mode=TwoWay}">
+        </ActivityIndicator>-->
+            <StackLayout Orientation="Horizontal">
+                <Image HorizontalOptions="StartAndExpand"
+                       Source="ic_add_a_photo.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TakePictureCommand}">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <ActivityIndicator HorizontalOptions="EndAndExpand"
+                                   IsRunning="{Binding IsRunning,Mode=TwoWay}">
+                </ActivityIndicator>
+            </StackLayout>
+            <Image Source="{Binding ImageSource, Mode=TwoWay}">
+            </Image>
+            <Button Command="{Binding NewComplaintCommand}"
+                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                    BorderRadius="20"
+                    HeightRequest="40"
+                    BackgroundColor="Blue"
+                    TextColor="White"
+                    Text="Nuevo">
+            </Button>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

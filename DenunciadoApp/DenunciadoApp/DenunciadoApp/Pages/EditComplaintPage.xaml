@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ComplaintsApp.Pages.EditComplaintPage"
+             Title="Editar Flor"
+             BackgroundColor="Silver"
+             BindingContext="{Binding Main,Source={StaticResource Locator}}">
+    <ScrollView BindingContext="{Binding EditComplaint}">
+        <StackLayout Padding="8">
+            <Label Text="Description">
+            </Label>
+            <Entry BackgroundColor="White"
+                   Text="{Binding Description, Mode=TwoWay}"
+                   Placeholder="Enter a description...">
+            </Entry>
+            <Label Text="Price">
+            </Label>
+            <Entry BackgroundColor="White"
+                   Text="{Binding Price, Mode=TwoWay}"
+                   Keyboard="Numeric"
+                   Placeholder="Enter a price...">
+            </Entry>
+            <Label Text="Last Purchase">
+            </Label>
+            <DatePicker BackgroundColor="White"
+                        Date="{Binding LastPurchase,Mode=TwoWay}">
+            </DatePicker>
+            <Label Text="Is Active">
+            </Label>
+            <Switch IsToggled="{Binding IsActive,Mode=TwoWay}">
+            </Switch>
+            <Label Text="Observation">
+            </Label>
+            <Editor BackgroundColor="White"
+                    Text="{Binding Observation,Mode=TwoWay}">
+            </Editor>
+            <!--<ActivityIndicator
+                IsRunning="{Binding IsRunning, Mode=TwoWay}">
+            </ActivityIndicator>-->
+            <StackLayout Orientation="Horizontal">
+                <Image HorizontalOptions="StartAndExpand"
+                       Source="ic_add_a_photo.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TakePictureCommand}">
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <ActivityIndicator HorizontalOptions="EndAndExpand"
+                                   IsRunning="{Binding IsRunning,Mode=TwoWay}">
+                </ActivityIndicator>
+            </StackLayout>
+            <Image Source="{Binding ImageFullPath, Mode=TwoWay}">
+            </Image>
+            <StackLayout Orientation="Horizontal ">
+                <Button Command="{Binding DeleteComplaintCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        BorderRadius="20"
+                        HeightRequest="40"
+                        BackgroundColor="Red"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="White"
+                        Text="Delete">
+                </Button>
+                <Button Command="{Binding SaveComplaintCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        BorderRadius="20"
+                        HeightRequest="40"
+                        BackgroundColor="Blue"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="White"
+                        Text="Save">
+                </Button>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
