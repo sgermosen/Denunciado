@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DenunciadoBackEnd", "DenunciadoWeb\DenunciadoBackEnd.csproj", "{FF64FD23-260D-4733-BC86-E2FFB3B53EA0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend", "Backend\Backend.csproj", "{49165752-3C0C-4C17-B095-5D85E5CE9CEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{CCDC487D-43DA-43C2-A74F-1C01750D5130}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FF64FD23-260D-4733-BC86-E2FFB3B53EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF64FD23-260D-4733-BC86-E2FFB3B53EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF64FD23-260D-4733-BC86-E2FFB3B53EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF64FD23-260D-4733-BC86-E2FFB3B53EA0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{49165752-3C0C-4C17-B095-5D85E5CE9CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{49165752-3C0C-4C17-B095-5D85E5CE9CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49165752-3C0C-4C17-B095-5D85E5CE9CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU

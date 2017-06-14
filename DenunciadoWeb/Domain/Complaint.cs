@@ -36,5 +36,6 @@ namespace Domain
         public int ComplaintTypeId { get; set; }
 
         public virtual ComplaintsType ComplaintType { get; set; }
+        public virtual User User { get; set; }
     }
 }
