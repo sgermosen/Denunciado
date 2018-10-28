@@ -1,4 +1,4 @@
-# Denunciado
+# Denuncia.do
 
 This project born from the need from people to have a way of communication between municipalities and communities.
 
