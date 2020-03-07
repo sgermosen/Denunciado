@@ -37,7 +37,15 @@ Notes
 2. Only a Registered Owner and Logged Use, Can Edit or Delete a Proposal, only if the Status is not In Revision by Legislators StatusId==3.
 3. For Anonimous Denounces We Need to Take Imei or Device ID.
 --------------------------------
+
+* Api Service
+* Helpers Service
+* Device Service
+* DataService
+* Translate Service
+
 * List Of Denounces (Comming From API)
+   This is the *Main Page* where the list of each recent denounce can be displayed
     * Main Image, Title, Resume
 
 * Details Of Chossen Denounce (Comming From API)
@@ -69,6 +77,13 @@ Notes
 
 * Report Denounce
     * DenounceId, UserId, Reason, DeviceId
+    
+* User Details Page
+
+* Edit User Details Page
+
+* Down Solicitation
+  This page its used for the user to make a solisitation to the admins to get removed from the plataform
 
 --------------------------------
 --------------------------------
