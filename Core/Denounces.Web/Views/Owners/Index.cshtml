@@ -1,0 +1,134 @@
+﻿@model IEnumerable<Mersy.Domain.Entities.Cor.Owner>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrefixExp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrefixFact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrefixOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrefixNcf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeqNcf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrefixFinalFact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NcfEnds)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeqFact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OwnerType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+          
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Imagen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrefixExp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrefixFact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrefixOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrefixNcf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeqNcf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrefixFinalFact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NcfEnds)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeqFact)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.OwnerType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+          
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Extensions\OrderExtensions.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EntityConfigurations\Cpo\" />
+    <Folder Include="EntityConfigurations\Med\" />
+    <Folder Include="EntityConfigurations\Pos\" />
+    <Folder Include="EntityConfigurations\Trk\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Denounces.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
