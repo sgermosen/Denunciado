@@ -1,10 +1,13 @@
-# Denuncia.do
+# Denuncia.Do
 
 This project born from the need from people to have a way of communication between municipalities and communities.
 
 Some municipalities, have their platforms, but they are complex to validate the veracity of complaints.
 
-Denounced, it was born with the purpose of offering a free platform to these municipalities.
+Denounced, was born with the purpose of offering a free platform to these municipalities to get connected with their representatives, with the purpose, not only to improve communication between them, but also to improve joint work for faster attention and problem solving.
+
+# Vision.
+Be the communication link between municipes and representatives to make complaints and promote proposals for state improvements, which can be voted, validated and/or supported by other municipes, thus creating a representative democratic portal where each individual can contribute ideas and solutions to the improvement of its locality.
 
 Denounced consists of three main modules developed with Microsoft technologies, using the .Net Framework and Xamarin for its development:
 
