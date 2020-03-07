@@ -9,6 +9,7 @@ Denounced, was born with the purpose of offering a free platform to these munici
 # Vision.
 Be the communication link between municipes and representatives to make complaints and promote proposals for state improvements, which can be voted, validated and/or supported by other municipes, thus creating a representative democratic portal where each individual can contribute ideas and solutions to the improvement of its locality.
 
+# Architecture
 Denounced consists of three main modules developed with Microsoft technologies, using the .Net Framework and Xamarin for its development:
 
 1. Back End Web Project:
