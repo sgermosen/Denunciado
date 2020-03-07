@@ -250,3 +250,4 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+Core/Denounces.Web/appsettings.Development.json
