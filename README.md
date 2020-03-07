@@ -38,26 +38,42 @@ Notes
 3. For Anonimous Denounces We Need to Take Imei or Device ID.
 --------------------------------
 
-* Api Service
-* Helpers Service
-* Device Service
-* DataService
-* Translate Service
+* Api Service: A Communication Service based on General POCO Entities to comunicate the client with the Backend.
+* Helpers Service: Are the utilities used to get decentralized job and use generics ways to get jobs done, like UploadPhotoService, ValidateService, etc.
+* Device Service: Service to work with sencible information of the device.
+* DataService: Service to manipulated database based on POCO entities, can be done on sQLite or another.
+* Translate Service: Our App need to be internazionalized ready, so, we need a service to translate labels and text is its possible.
 
-* List Of Denounces (Comming From API)
-   This is the *Main Page* where the list of each recent denounce can be displayed
-    * Main Image, Title, Resume
+* List Of Denounces: This is the **Main Page** where the list of each recent denounce is displayed, this screen use the ApiService to Get a list of the Proposals (Denounces), and save the data to a local database (This is Optional)
+    * ListView: Main Image, Title, Resume.
+    * Choosen 1: Filter By Proposal Type.
+    * Choosen 2: Filter By Status.
+    * Choosen 3: Order By Name, Proposal Type, Date, Status.
+    * Search Bar: Type text and Filter by Name, Proposal Type, Date, Status.
+    * Pluss Icon: Icon to Make a new Denounce.
+    * Loggin Option: Can be ignored if we create a Menu
+    * My Info Option: Can be ignored if we create a Menu
+    
+* Details Of Chossen Denounce: We come here after clic on a denounce on the main page, it need to go to the api and update the record on the local database (optional) 
+    * View: Title, Description (Resume), Detail (Legal Mark), Owner.
+    * Vote Up Icon: Only displayed if i'm a logged user.
+    * Vote Down Icon: Only displayed if i'm a logged user.
+    * Edit Suggestion: A Logged User can suggest a modification, than can be approved by the admin or the owner.
+    * Report Icon: Only displayed if i'm a logged user.
 
-* Details Of Chossen Denounce (Comming From API)
-    * Title, Description (Resume), Detail (Legal Mark), Votes Up, Votes Down
-
-* Create Denounce
+* Create Denounce: This it's the section to create a denounce than can be created as an anonimous or as a register user
+    * Pop Up: If im not logged, display a Message to indicated than my denounce will be created as a anonimous denounced, and remembering than those kind of denounces can't be update or deleted and two buttons: "Login" or "Continue Anonimous"
     * Anonimous Denounce 
-      * Title, Description (Resume), Detail (Legal Mark), DeviceId
+      * View: Title, Description (Resume), Detail (Legal Mark).
+      * Behind: DeviceId.
     * Registered User Denounce
-      * Title, Description (Resume), Detail (Legal Mark), UserId, DeviceId
+      * View: Title, Description (Resume), Detail (Legal Mark).
+      * Behind: UserId, DeviceId.
 
 * Edit Denounce
+    * Title, Description (Resume), Detail (Legal Mark), UserId, DenounceId
+    
+* Edit Denounce Suggestions
     * Title, Description (Resume), Detail (Legal Mark), UserId, DenounceId
 
 * Delete Denounce
@@ -84,6 +100,8 @@ Notes
 
 * Down Solicitation
   This page its used for the user to make a solisitation to the admins to get removed from the plataform
+  
+ 
 
 --------------------------------
 --------------------------------
