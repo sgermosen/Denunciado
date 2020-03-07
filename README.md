@@ -30,45 +30,45 @@ It has the same functionalities as the web portal, with the addition, that the a
 
 # Need to Be Done
 --------------------------------
-----------Movil Client----------
+Movil Client
 --------------------------------
-Notes: 
+Notes
 1. Each Denounce it's a Proposal Record on the database with a ProposalTypeId == 1, so, the Model Structure need to be checked on the Domain Before use a different Naming Convention
 2. Only a Registered Owner and Logged Use, Can Edit or Delete a Proposal, only if the Status is not In Revision by Legislators StatusId==3.
 3. For Anonimous Denounces We Need to Take Imei or Device ID.
 --------------------------------
-*List Of Denounces (Comming From API)
---Main Image, Title, Resume
+* List Of Denounces (Comming From API)
+    * Main Image, Title, Resume
 
-*Details Of Chossen Denounce (Comming From API)
---Title, Description (Resume), Detail (Legal Mark), Votes Up, Votes Down
+* Details Of Chossen Denounce (Comming From API)
+    * Title, Description (Resume), Detail (Legal Mark), Votes Up, Votes Down
 
-*Create Denounce
--Anonimous Denounce 
---Title, Description (Resume), Detail (Legal Mark), DeviceId
--Registered User Denounce
---Title, Description (Resume), Detail (Legal Mark), UserId, DeviceId
+* Create Denounce
+    * Anonimous Denounce 
+      * Title, Description (Resume), Detail (Legal Mark), DeviceId
+    * Registered User Denounce
+      * Title, Description (Resume), Detail (Legal Mark), UserId, DeviceId
 
-*Edit Denounce
---Title, Description (Resume), Detail (Legal Mark), UserId, DenounceId
+* Edit Denounce
+    * Title, Description (Resume), Detail (Legal Mark), UserId, DenounceId
 
-*Delete Denounce
---UserId, DenounceId
+* Delete Denounce
+    * UserId, DenounceId
 
-*Login
---Email, Password
+* Login
+    * Email, Password
 
-*Register
---Email, Name, Lastname, Rnc, Phone, Address, Password, DeviceId
+* Register
+    * Email, Name, Lastname, Rnc, Phone, Address, Password, DeviceId
 
-*Vote Up
---DenounceId, UserId, DeviceId
+* Vote Up
+    * DenounceId, UserId, DeviceId
 
-*Vote Down
---DenounceId, UserId, DeviceId
+* Vote Down
+    * DenounceId, UserId, DeviceId
 
-*Report Denounce
---DenounceId, UserId, Reason, DeviceId
+* Report Denounce
+    * DenounceId, UserId, Reason, DeviceId
 
 --------------------------------
 --------------------------------
