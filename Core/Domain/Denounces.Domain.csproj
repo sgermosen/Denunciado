@@ -11,7 +11,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Entities\Complaint.cs" />
+    <Compile Remove="Entities\ComplaintsType.cs" />
+    <Compile Remove="Entities\Country.cs" />
+    <Compile Remove="Entities\Ideology.cs" />
+    <Compile Remove="Entities\Ocupation.cs" />
     <Compile Remove="Entities\Owner.cs" />
+    <Compile Remove="Entities\Person.cs" />
+    <Compile Remove="Entities\Province.cs" />
+    <Compile Remove="Entities\Religion.cs" />
+    <Compile Remove="Entities\SchoolLevel.cs" />
+    <Compile Remove="Helpers\Gender.cs" />
+    <Compile Remove="Helpers\MaritalSituation.cs" />
   </ItemGroup>
 
   <ItemGroup>

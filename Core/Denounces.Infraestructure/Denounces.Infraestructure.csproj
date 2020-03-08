@@ -5,20 +5,33 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Extensions\OrderExtensions.cs" />
+    <Compile Remove="EntityConfigurations\Cpo\**" />
+    <Compile Remove="EntityConfigurations\Med\**" />
+    <Compile Remove="EntityConfigurations\Pos\**" />
+    <Compile Remove="EntityConfigurations\Trk\**" />
+    <EmbeddedResource Remove="EntityConfigurations\Cpo\**" />
+    <EmbeddedResource Remove="EntityConfigurations\Med\**" />
+    <EmbeddedResource Remove="EntityConfigurations\Pos\**" />
+    <EmbeddedResource Remove="EntityConfigurations\Trk\**" />
+    <None Remove="EntityConfigurations\Cpo\**" />
+    <None Remove="EntityConfigurations\Med\**" />
+    <None Remove="EntityConfigurations\Pos\**" />
+    <None Remove="EntityConfigurations\Trk\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="EntityConfigurations\Cpo\" />
-    <Folder Include="EntityConfigurations\Med\" />
-    <Folder Include="EntityConfigurations\Pos\" />
-    <Folder Include="EntityConfigurations\Trk\" />
+    <Compile Remove="Extensions\OrderExtensions.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

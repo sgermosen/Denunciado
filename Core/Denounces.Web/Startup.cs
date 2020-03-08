@@ -3,6 +3,8 @@ namespace Denounces.Web
     using Denounces.Domain.Entities;
     using Denounces.Infraestructure;
     using Denounces.Infraestructure.Extensions;
+    using Denounces.Repositories.Contracts;
+    using Denounces.Repositories.Implementations.Cor;
     using Denounces.Web.Helpers;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -72,8 +74,8 @@ namespace Denounces.Web
 
             #region RepositoryScopes
 
-            // services.AddScoped<IOwnerRepository, OwnerRepository>();
-
+           services.AddScoped<IProposalRepository, ProposalRepository>();
+            services.AddScoped<IProposalTypeRepository, ProposalTypeRepository>();
             #endregion
 
             //services.Configure<CookiePolicyOptions>(options =>
@@ -88,8 +90,7 @@ namespace Denounces.Web
                 options.LoginPath = "/Account/NotAuthorized";
                 options.AccessDeniedPath = "/Account/NotAuthorized";
             });
-
-            //  services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                      
             services.AddControllersWithViews();
         }
 
@@ -110,32 +111,27 @@ namespace Denounces.Web
 
 
             app.UseStatusCodePagesWithReExecute("/error/{0}");
-            app.UseHttpsRedirection();
-
+           
             //var provider = new FileExtensionContentTypeProvider();
             //provider.Mappings[".json"] = "application/json";
 
-            app.UseHttpsRedirection();
+           app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
-            // app.UseCookiePolicy();
+        app.UseCookiePolicy();
 
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-            //    );
-            //    routes.MapRoute(
-            //       name: "default",
-            //       template: "{controller=Home}/{action=Index}/{id?}");
-            //});
+            //app.UseMvc();
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -1,7 +1,7 @@
 ﻿@model LoginViewModel
 @{
     ViewData["Title"] = "Inicio de Sesion";
-     Layout = "~/Views/Shared/_LayoutPage.cshtml";
+     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
  
@@ -13,15 +13,13 @@
                 <img class="img-fluid img-thumbnail rounded-circle" src="~/images/logo.png" alt="Logo Mersy" width="200" height="100" />
             </div>
         </div>
-        @*<div class="card-header text-center bg-dark">
-            <a href="#">
-                <img class="block-center rounded" src="~/images/SmallLogoMercy.jpg" alt="Image" style="width:250px;height:100px" />
-            </a>
-        </div>*@
+       
         <div class="card-body">
             <p class="text-center py-2">INICIA SESION PARA CONTINUAR</p>
             <form class="mb-3" id="loginForm" novalidate="novalidate" method="post">
-                <div asp-validation-summary="ModelOnly"></div>
+                <div asp-validation-summary="ModelOnly">
+
+                </div>
                 <div class="form-group">
                     <div class="input-group with-focus">
                         <input class="form-control border-right-0"
@@ -59,9 +57,7 @@
                         </label>
                     </div>
                     <div class="float-right">
-                        <a class="text-muted"
-                           asp-action="RecoverPassword"
-                           href="@Url.Action("Recover", "Pages")">Olvidaste tu Contraseña?</a>
+                        
                     </div>
                 </div>
                 <button class="btn btn-block btn-primary mt-3" type="submit" >Acceder</button>
@@ -70,7 +66,7 @@
             <a class="btn btn-block btn-secondary" href="@Url.Action("Register", "Pages")">Register Now</a>*@
         </div>
     </div>
-    <!-- END card-->
+   
     <div class="p-3 text-center">
         <span class="mr-2">&copy;</span>
         <span>2019 Mersy Core</span>

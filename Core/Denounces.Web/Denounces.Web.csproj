@@ -2,24 +2,30 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Company>PraySoft</Company>
+    <Authors>sGermosen</Authors>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Views\Owners\**" />
-    <Content Remove="Views\Owners\**" />
-    <EmbeddedResource Remove="Views\Owners\**" />
-    <None Remove="Views\Owners\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Controllers\OwnersController.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Proposals\Delete.cshtml" />
+    <Content Remove="Views\Proposals\Details.cshtml" />
+    <Content Remove="Views\Proposals\Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Google.Cloud.Translation.V2" Version="1.2.0" />
     <PackageReference Include="MailKit" Version="2.5.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
   </ItemGroup>
@@ -56,6 +62,13 @@
   <ItemGroup>
     <UpToDateCheckInput Remove="Views\Home\Error404.cshtml" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Proposals\Create.cshtml" />
+    <None Include="Views\Proposals\Index.cshtml" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4lib_4bootstrap_4dist_4css_4bootstrap_1css_1map__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 
 

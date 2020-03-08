@@ -1,4 +1,4 @@
-﻿using Denounces.Domain.Entities.Cor;
+﻿using Denounces.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,19 +7,14 @@ namespace Denounces.Web.Models
 {
     public class ImageViewModel  
     {
-        public int ImageIsFrom { get; set; } //1: Kids, 2: Activities, 3: Benefits, 4: Foods
-
+       
         public IFormFile ImageFile { get; set; }
 
         public IEnumerable<Image> Images { get; set; }
 
         public long PersonId { get; set; }
        
-        public long ActivityId { get; set; }
        
-        public long BenefitId { get; set; }
-       
-        public long FoodId { get; set; }
 
         public long MyId { get; set; }
 

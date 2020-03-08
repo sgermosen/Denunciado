@@ -2,9 +2,7 @@
 {
     using Denounces.Domain.Helpers;
     using Domain.Entities;
-    using Domain.Entities.Cor;
     using EntityConfigurations;
-    using EntityConfigurations.Cor;
     using Infraestructure.Extensions;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
@@ -151,26 +149,46 @@
                 fk.DeleteBehavior = DeleteBehavior.Restrict;
 
             base.OnModelCreating(modelBuilder);
+            //Remove AspNetNames it change form 2.2
+            //foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            //{
+            //    var table = entityType.Relational().TableName;
+            //    if (table.StartsWith("AspNet"))
+            //    {
+            //        entityType.Relational().TableName = table.Substring(6);
+            //    }
+            //};
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                var tableName = entityType.GetTableName();
+                if (tableName.StartsWith("AspNet"))
+                {
+                    entityType.SetTableName(tableName.Substring(6));
+                }
+            }
             AddMyFilters(ref modelBuilder);
             modelBuilder.ApplyConfiguration(new ApplicationUserConfig());
             //registering the configurations for all the classes
             //  new ApplicationUserConfig(modelBuilder.Entity<ApplicationUser>());
-           // new OwnerConfig(modelBuilder.Entity<Owner>());
-           // new ShopConfig(modelBuilder.Entity<Shop>());
+            // new OwnerConfig(modelBuilder.Entity<Owner>());
+            // new ShopConfig(modelBuilder.Entity<Shop>());
 
         }
 
-       
+
         public DbSet<Image> Images { get; set; }
-       
-        public DbSet<Country> Countries { get; set; }
-        public DbSet<Ocupation> Ocupations { get; set; }
-        public DbSet<Religion> Religions { get; set; }
-        public DbSet<SchoolLevel> SchoolLevels { get; set; }
-       
-        public DbSet<Person> People { get; set; }
-       
+
+        //public DbSet<Country> Countries { get; set; }
+        //public DbSet<Ocupation> Ocupations { get; set; }
+        //public DbSet<Religion> Religions { get; set; }
+        //public DbSet<SchoolLevel> SchoolLevels { get; set; }
+
+        //  public DbSet<Person> People { get; set; }
+
         public DbSet<Status> Status { get; set; }
+        public DbSet<Proposal> Proposals { get; set; }
+        public DbSet<ProposalType> ProposalTypes { get; set; }
+        public DbSet<Vote> Votes { get; set; }
 
         public override int SaveChanges()
         {
@@ -241,17 +259,15 @@
             if (_currentUser != null)
             {
                 user = _currentUser.Get;
-               // modelBuilder.Entity<Person>().HasQueryFilter(x => x.CreatedUser.Owner.Id == user.OwnerId && !x.Deleted);
-                modelBuilder.Entity<Person>().HasQueryFilter(x => !x.Deleted);
+                // modelBuilder.Entity<Person>().HasQueryFilter(x => x.CreatedUser.Owner.Id == user.OwnerId && !x.Deleted);
+
             }
 
             #region SoftDeleted
 
-            //modelBuilder.Entity<ApplicationUser>().HasQueryFilter(x => x.Owner.Id == user.OwnerId && !x.Deleted);
-            //modelBuilder.Entity<Wallet>().HasQueryFilter(x =>  && !x.State);
-            //  modelBuilder.Entity<ApplicationUser>().HasQueryFilter(x => !x.Deleted);
-            modelBuilder.Entity<Image>().HasQueryFilter(x => !x.Deleted);           
-            modelBuilder.Entity<Person>().HasQueryFilter(x => !x.Deleted);
+
+            modelBuilder.Entity<Image>().HasQueryFilter(x => !x.Deleted);
+
 
             #endregion
         }

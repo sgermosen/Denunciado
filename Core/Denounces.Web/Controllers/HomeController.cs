@@ -22,7 +22,7 @@ namespace Denounces.Web.Controllers
     {
         private readonly IConfiguration configuration;
 
-        public HomeController(ApplicationDbContext context, IUserHelper userHelper, ICurrentUserFactory currentUser, IConfiguration configuration) : base(context, userHelper, currentUser)
+        public HomeController(ApplicationDbContext context, IUserHelper userHelper, ICurrentUserFactory currentUser, IConfiguration configuration) : base(context,userHelper, currentUser)
         {
             this.configuration = configuration;
         }

@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Account\**" />
+    <Content Remove="Views\Account\**" />
+    <EmbeddedResource Remove="Views\Account\**" />
+    <None Remove="Views\Account\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\TranslateSampleController.cs" />
+    <Compile Remove="Controllers\TranslatorController.cs" />
+    <Compile Remove="Helpers\MailHelper.cs" />
+    <Compile Remove="Helpers\Translator.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Proposals\Delete.cshtml" />
+    <Content Remove="Views\Proposals\Details.cshtml" />
+    <Content Remove="Views\Proposals\Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Account\Loginx.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Denounces.Repositories\Denounces.Repositories.csproj" />
+  </ItemGroup>
+
+
+
+</Project>
