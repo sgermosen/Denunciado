@@ -64,16 +64,7 @@
                     result.Email = claims.Where(x => x.Type.Equals(ClaimTypes.Email)).First().Value;
                 }
 
-                if (claims.Any(x => x.Type.Equals("OwnerId")))
-                {
-                    result.OwnerId = long.Parse(claims.Where(x => x.Type.Equals("OwnerId")).First().Value);
-                }
-
-                if (claims.Any(x => x.Type.Equals("ShopId")))
-                {
-                    result.ShopId = long.Parse(claims.Where(x => x.Type.Equals("ShopId")).First().Value);
-                }
-
+               
                 //if (claims.Any(x => x.Type.Equals(ClaimTypes.Surname)))
                 //{
                 //    result.Lastname = claims.Where(x => x.Type.Equals(ClaimTypes.Surname)).First().Value;
@@ -114,8 +105,7 @@
         public string Image { get; set; }
         public string Token { get; set; }
         public string Role { get; set; }
-        public long OwnerId { get; set; }
-        public long ShopId { get; set; }
+  
         // public string Password { get; set; }
     }
 }

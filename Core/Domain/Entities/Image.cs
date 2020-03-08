@@ -1,17 +1,15 @@
-﻿namespace Denounces.Domain.Entities.Cor
+﻿namespace Denounces.Domain.Entities
 {
     using Helpers;
     using System.ComponentModel.DataAnnotations;
 
     public class Image : AuditEntity, IBaseEntity
-    {
-        public int  ImageIsFrom { get; set; } //1: Kids, 2: Activities, 3: Benefits, 4: Foods, 
+    {       
+       public int? UserId { get; set; }
+        public ApplicationUser User { get; set; }
 
-       public int? PersonId { get; set; }
-        public Person Person { get; set; }
-
-        public int? ComplaintId { get; set; }
-        public Complaint Complaint { get; set; }
+        public int? ProposalId { get; set; }
+        public Proposal Proposal { get; set; }
          
         [DataType(DataType.ImageUrl)]
         [Display(Name = "Imagen")]

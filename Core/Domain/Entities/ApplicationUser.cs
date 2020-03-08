@@ -1,7 +1,9 @@
 ﻿namespace Denounces.Domain.Entities
 {
+   
     using Microsoft.AspNetCore.Identity;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class ApplicationUser : IdentityUser
     {
@@ -25,6 +27,5 @@
 
         public string FullName => $"{Name} {Lastname}";
 
-        //  public Owner Owner { get; set; }
     }
 }

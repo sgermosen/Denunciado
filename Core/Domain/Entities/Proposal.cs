@@ -1,6 +1,8 @@
-﻿using Denounces.Domain.Entities.Cor;
+﻿using Denounces.Domain.Entities;
 using Denounces.Domain.Helpers;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Denounces.Domain.Entities
@@ -15,17 +17,25 @@ namespace Denounces.Domain.Entities
         [MaxLength(5000)]
         public string Details { get; set; } //Details/ Legal Mark
 
-        public int ProposalTypeId { get; set; }
-        public ProposalType ProposalType { get; set; }
+        public long Longitude { get; set; }
+        public long Latitude { get; set; }
 
-        public int Order { get; set; }
-
-        //public DateTime CreationDate { get; set; }
+        public int PriorityNumber { get; set; }
 
         public DateTime? EndDate { get; set; }
 
+        public int ProposalTypeId { get; set; }
+        public ProposalType ProposalType { get; set; }
+
         public int StatusId { get; set; }
         public Status Status { get; set; }
+
+        public ICollection<Vote> Votes { get; set; }
+
+        public Proposal()
+        {
+            Votes = new Collection<Vote>();
+        }
 
 
     }
