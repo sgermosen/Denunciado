@@ -1,9 +1,4 @@
-﻿using System;
-using System.Linq;
-using Denounces.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
-
-namespace Denounces.Web.Controllers
+﻿namespace Denounces.Web.Controllers
 {
     using Denounces.Infraestructure;
     using Denounces.Infraestructure.Extensions;
@@ -12,7 +7,6 @@ namespace Denounces.Web.Controllers
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Configuration;
     using System.Diagnostics;
-    using System.Threading.Tasks;
 
     public class HomeController : PsBaseController
     {

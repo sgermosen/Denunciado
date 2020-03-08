@@ -184,22 +184,7 @@
   
         <script>
             $(document).ready(function () {
-                @*   if (trans == '')
-                    trans = 'es';
-
-               // runPageTranslator();
-                $("#language").change(function () {
-
-                    trans = $(this).val();
-                   // runPageTranslator();
-                    @*var url = '@Url.Action("Translate", "Translator")';
-
-                $.get(url, { 'text': $('#birthHead').text(), 'language': $(this).val() })
-                    .done(function(data) {
-                        $('#birthHead').text(data);
-                    });
-                });*@
-
+               
                 var ROOT_URL = window.location.protocol + "//" + window.location.host;
 
                 $('.table').DataTable({

@@ -102,32 +102,18 @@
             }
             else
             {
-                app.UseDeveloperExceptionPage();
+               // app.UseDeveloperExceptionPage();
 
-                //app.UseExceptionHandler("/Home/Error");
-                //// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                //app.UseHsts();
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
             }
 
             app.UseStatusCodePagesWithReExecute("/error/{0}");
             app.UseHttpsRedirection();
 
-            //var provider = new FileExtensionContentTypeProvider();
-            //provider.Mappings[".json"] = "application/json";
-
-            app.UseStaticFiles();
-            //app.UseStaticFiles(new StaticFileOptions()
-            //{
-            //    FileProvider = new PhysicalFileProvider(
-            //        Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\i18n")),
-            //    RequestPath = new PathString("/i18n"),
-            //    ContentTypeProvider = provider
-            //});
-            //app.UseStaticFiles(new StaticFileOptions
-            //{
-            //    ServeUnknownFileTypes = true,
-            //    DefaultContentType = "application/json"
-            //});
+               app.UseStaticFiles();
+            
             app.UseAuthentication();
             app.UseCookiePolicy();
 

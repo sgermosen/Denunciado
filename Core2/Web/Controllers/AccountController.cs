@@ -15,8 +15,7 @@
     public class AccountController : Controller
     {
         private readonly IUserHelper _userHelper;
-        private readonly IMailHelper _mailHelper;
-        //private readonly ICountryRepository countryRepository;
+        private readonly IMailHelper _mailHelper; 
         private readonly IConfiguration _configuration;
 
         public AccountController(
@@ -25,8 +24,7 @@
             IConfiguration configuration)
         {
             this._userHelper = userHelper;
-            this._mailHelper = mailHelper;
-            //   this.countryRepository = countryRepository;
+            this._mailHelper = mailHelper; 
             this._configuration = configuration;
         }
 

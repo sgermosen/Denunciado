@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Sistema de Administracion Fundacion Pedro Martinez";
+    ViewData["Title"] = "Proposals";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,35 +9,7 @@
 <div class="row">
     <div style="text-align: center;">
 
-        <table id="TableHeader" style="font-size: 52pt; font-family: Comic Sans MS;
-                                                                                                   font-weight: bold; text-transform: uppercase;color:aqua;width:100%">
-            <tr>
-                <td rowspan="4" style="width: 40%"></td>
-                <td rowspan="4" style="width: 5%; text-align: center">
-                    
-
-                </td>
-                <td rowspan="4" style="width: 5%">
-
-                    <img src="~/images/SmallLogoMercy.png" alt="Mersy" class="LogoNormalA" dir="rtl" />
-                </td>
-                <td style="width: 40%"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-            <tr>
-                <td colspan="4" style="text-align: center">
-                </td>
-            </tr>
-        </table>
+        
 
 
 
@@ -46,40 +18,7 @@
  
 
 @section Scripts {
-    <script>
-        var language = "Español";
-        $(document).ready(function () {
-           
-            language = Storages.localStorage.get('jq-appLang');
-
-            manualTranslations();
-
-            $(".jsDataLanguaje").click(function () {
-                language = $(this).text();
-               // Storages.localStorage.set(STORAGEKEY, 'es');
-                manualTranslations();
-            });
-        });
-        function manualTranslations() {
-         
-            if (language == 'English' || language == 'en' ) {
-                $('.menuAndOptions').prop('title', 'Menu and Options');
-                $('#logoutButonNav').prop('title', 'Block Screen/Close Session');
-                $('#expandFullScreenButon').prop('title', 'Expand to Full Screen');
-                $('#visualStylesButon').prop('title', 'Visual Styles Configuration');
-                $('#inputSearch').attr('placeholder', 'Write and Press Enter ...');
-                $('#headerTitle').text('Pedro Martinez Foundation Administration System');
-            } else {
-                $('.menuAndOptions').prop('title', 'Menu y Opciones');
-                $('#logoutButonNav').prop('title', 'Bloquear la Pantalla/Cerrar Sesion');
-                $('#expandFullScreenButon').prop('title', 'Expandir a Pantalla Completa');
-                $('#visualStylesButon').prop('title', 'Configuracion de Estilos Visuales');
-                $('#inputSearch').attr('placeholder', 'Escriba y pulse enter ...');
-                $('#headerTitle').text('Sistema de Administracion Fundacion Pedro Martinez');
-            }
-           
-        }
-    </script> 
+   
 }
 
 
