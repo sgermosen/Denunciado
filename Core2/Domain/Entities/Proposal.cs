@@ -1,5 +1,4 @@
-﻿using Denounces.Domain.Entities;
-using Denounces.Domain.Helpers;
+﻿using Denounces.Domain.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,6 +17,7 @@ namespace Denounces.Domain.Entities
         public string Details { get; set; } //Details/ Legal Mark
 
         public long Longitude { get; set; }
+
         public long Latitude { get; set; }
 
         public int PriorityNumber { get; set; }

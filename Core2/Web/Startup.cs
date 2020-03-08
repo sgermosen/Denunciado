@@ -70,6 +70,9 @@
             services.AddScoped<IUserHelper, UserHelper>();
             services.AddScoped<IMailHelper, MailHelper>();
             services.AddScoped<ITranslator, Translator>();
+            services.AddScoped<IConverterHelper, ConverterHelper>(); 
+            services.AddScoped<ICombosHelper, CombosHelper>();
+       
 
             #region RepositoryScopes
 

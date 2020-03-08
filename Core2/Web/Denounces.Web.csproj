@@ -14,7 +14,6 @@
     <Compile Remove="Areas\Administration\Views\Options\**" />
     <Compile Remove="Areas\Administration\Views\Users\**" />
     <Compile Remove="Areas\Administration\Views\Zones\**" />
-    <Compile Remove="Controllers\NewFolder\**" />
     <Compile Remove="Views\Owners\**" />
     <Compile Remove="Views\Shops\**" />
     <Compile Remove="Views\TranslateSample\**" />
@@ -24,7 +23,6 @@
     <Content Remove="Areas\Administration\Views\Options\**" />
     <Content Remove="Areas\Administration\Views\Users\**" />
     <Content Remove="Areas\Administration\Views\Zones\**" />
-    <Content Remove="Controllers\NewFolder\**" />
     <Content Remove="Views\Owners\**" />
     <Content Remove="Views\Shops\**" />
     <Content Remove="Views\TranslateSample\**" />
@@ -34,7 +32,6 @@
     <EmbeddedResource Remove="Areas\Administration\Views\Options\**" />
     <EmbeddedResource Remove="Areas\Administration\Views\Users\**" />
     <EmbeddedResource Remove="Areas\Administration\Views\Zones\**" />
-    <EmbeddedResource Remove="Controllers\NewFolder\**" />
     <EmbeddedResource Remove="Views\Owners\**" />
     <EmbeddedResource Remove="Views\Shops\**" />
     <EmbeddedResource Remove="Views\TranslateSample\**" />
@@ -44,7 +41,6 @@
     <None Remove="Areas\Administration\Views\Options\**" />
     <None Remove="Areas\Administration\Views\Users\**" />
     <None Remove="Areas\Administration\Views\Zones\**" />
-    <None Remove="Controllers\NewFolder\**" />
     <None Remove="Views\Owners\**" />
     <None Remove="Views\Shops\**" />
     <None Remove="Views\TranslateSample\**" />
