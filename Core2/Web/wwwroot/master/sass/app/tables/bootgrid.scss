@@ -1,0 +1,88 @@
+/* ========================================================================
+     Component: Bootgrid
+ ========================================================================== */
+
+.bootgrid-header {
+    .search {
+        width: 100%;
+        max-width: 140px;
+        @include media-breakpoint-up(md) {
+            max-width: 240px;
+        }
+        .input-group-addon {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+        &.form-group {
+            float: left;
+        }
+    }
+
+    .dropdown {
+        color: inherit;
+        .dropdown-menu {
+            transform: translate3d(0, 0, 0) !important;
+            top: 10% !important;
+            right: 0 !important;
+            left: auto !important;
+        }
+        .dropdown-item {
+            & {
+                &:hover {
+                    background-color: $primary !important;
+                    color: #fff !important;
+                }
+            }
+            > a {
+                color: inherit;
+            }
+        }
+        .active > .dropdown-item {
+            color: #fff;
+        }
+    }
+}
+
+.bootgrid-table {
+    th {
+        > .column-header-anchor {
+            color: inherit;
+        }
+        &:hover, &:active {
+            background-color: rgba($gray,.12);
+        }
+    }
+    td.loading, td.no-results {
+        background-color: transparent;
+        color: inherit;
+    }
+}
+
+.bootgrid-footer {
+    > .row {
+        align-items: center
+    }
+    .pagination {
+        justify-content: center;
+    }
+    .infoBar {
+        margin-top: 1rem;
+        text-align: center;
+    }
+}
+@include media-breakpoint-up(md) {
+    .bootgrid-footer {
+        .pagination {
+            justify-content: start;
+        }
+        .infoBar {
+            margin-top: 0;
+            text-align: right;
+        }
+    }
+}
+// Active cells background
+.bootgrid .table > thead > tr > td.active, .bootgrid .table > tbody > tr > td.active, .bootgrid .table > tfoot > tr > td.active, .bootgrid .table > thead > tr > th.active, .bootgrid .table > tbody > tr > th.active, .bootgrid .table > tfoot > tr > th.active, .bootgrid .table > thead > tr.active > td, .bootgrid .table > tbody > tr.active > td, .bootgrid .table > tfoot > tr.active > td, .bootgrid .table > thead > tr.active > th, .bootgrid .table > tbody > tr.active > th, .bootgrid .table > tfoot > tr.active > th {
+    background-color: $gray-light;
+}

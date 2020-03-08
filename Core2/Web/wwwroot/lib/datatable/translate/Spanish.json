@@ -1,0 +1,26 @@
+
+
+{
+	"sProcessing":     "...",
+	"sLengthMenu":     " _MENU_ ",
+	"sZeroRecords":    "...",
+	"sEmptyTable":     "...",
+	"sInfo":           " _START_ - _END_ | _TOTAL_ regs",
+	"sInfoEmpty":      "...",
+	"sInfoFiltered":   "(filt _MAX_ regs)",
+	"sInfoPostFix":    "",
+	"sSearch":         "",
+	"sUrl":            "",
+	"sInfoThousands":  ",",
+	"sLoadingRecords": "...",
+	"oPaginate": {
+		"sFirst":    "<<",
+		"sLast":     ">>",
+		"sNext":     "►",
+		"sPrevious": "◄"
+	},
+	"oAria": {
+		"sSortAscending":  ": ▲",
+		"sSortDescending": ": ▼"
+	}
+}

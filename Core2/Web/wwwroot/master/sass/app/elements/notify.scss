@@ -1,0 +1,106 @@
+/* ========================================================================
+    Component: notify from uikit
+ ========================================================================== */
+
+
+$notify-position:                               50px;
+$notify-z-index:                                1040;
+$notify-width:                                  350px;
+
+$notify-message-margin-bottom:                  10px;
+$notify-message-padding:                        15px;
+$notify-message-background:                     #444;
+$notify-message-color:                          #fff;
+$notify-message-font-size:                      16px;
+$notify-message-line-height:                    22px;
+
+$notify-message-primary-background:             #ebf7fd;
+$notify-message-primary-color:                  #2d7091;
+
+$notify-message-success-background:             #f2fae3;
+$notify-message-success-color:                  #659f13;
+
+$notify-message-warning-background:             #fffceb;
+$notify-message-warning-color:                  #e28327;
+
+$notify-message-danger-background:              #fff1f0;
+$notify-message-danger-color:                   #d85030;
+
+// Message container for positioning
+.uk-notify {
+    position: fixed;
+    top: $notify-position;
+    left: $notify-position;
+    z-index: $notify-z-index;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: $notify-width;
+
+}
+
+// Position modifiers
+.uk-notify-top-right,
+.uk-notify-bottom-right  {
+    left: auto;
+    right: $notify-position;
+}
+
+.uk-notify-top-center,
+.uk-notify-bottom-center {
+    left: 50%;
+    margin-left: ($notify-width / -2);
+}
+
+.uk-notify-bottom-left,
+.uk-notify-bottom-right,
+.uk-notify-bottom-center {
+    top: auto;
+    bottom: $notify-position;
+}
+
+
+// Responsiveness
+
+
+// Phones portrait and smaller */
+@include media-breakpoint-down(xs) {
+
+    // Fit in small screen
+
+    .uk-notify {
+        left: 10px;
+        right: 10px;
+        width: auto;
+        margin: 0;
+    }
+
+}
+
+
+// Sub-object: `uk-notify-message`
+.uk-notify-message {
+    position: relative;
+    margin-bottom: $notify-message-margin-bottom;
+    padding: $notify-message-padding;
+    font-size: $notify-message-font-size;
+    line-height: $notify-message-line-height;
+    border-radius: $border-radius-sm;
+    padding-right: 35px;
+    cursor: pointer;
+
+
+    // $geedmo: define a normal status to use with default styling
+    &.alert.alert-normal {
+        background: $notify-message-background;
+        color: $notify-message-color;
+    }
+}
+
+
+
+// Close in notify
+.uk-notify-message > .close {
+    visibility: hidden;
+}
+
+.uk-notify-message:hover > .close { visibility: visible; }

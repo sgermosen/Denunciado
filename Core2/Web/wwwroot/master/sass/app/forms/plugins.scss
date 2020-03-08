@@ -1,0 +1,179 @@
+/* ========================================================================
+    Component: plugins
+    - Use this stylesheet to include single css styles for plugins
+ ========================================================================== */
+
+
+// Bootstrap Slider variables
+$slider-handle-bg: $primary;
+$slider-track-border: $primary;
+$slider-selection-bg: $slider-track-border;
+$slider-tooltip-color: #2c3037;
+
+body {
+
+    // Reuse form contrl definition from BS as a mixin to avoid redeclaration
+    // and extend the styles in other components
+    @mixin form-control() {
+        display: block;
+        width: 100%;
+        height: $input-height; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+        padding: $input-padding-y $input-padding-x;
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+        color: $input-color;
+        background-color: $input-bg;
+        background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+        border: 1px solid $input-border-color;
+        border-radius: $input-border-radius;
+        @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075));
+        @include transition(#{"border-color ease-in-out .15s, box-shadow ease-in-out .15s"}); // Customize the `:focus` state to imitate native WebKit styles.
+        @include form-control-focus(); //g Placeholder
+
+        &[disabled],
+        &[readonly],
+        fieldset[disabled] & {
+            cursor: not-allowed;
+            background-color: $input-disabled-bg;
+            opacity: 1; // iOS fix for unreadable disabled content
+        }
+    }
+
+
+    .slider-handle,
+    .slider-track,
+    .slider-selection {
+        background-image: none;
+        box-shadow: 0 0 0 #000;
+    }
+
+    .slider-handle {
+        background-color: #fff;
+        border: 1px solid $slider-handle-bg;
+        opacity: 1;
+    }
+    .slider-track {
+        background-color: #fff;
+        border: 1px solid $slider-track-border;
+    }
+    .slider-selection {
+        background-color: $slider-selection-bg;
+    }
+
+    .slider {
+        .tooltip.top .tooltip-arrow {
+            border-top-color: $slider-tooltip-color;
+        }
+        .tooltip.right .tooltip-arrow {
+            border-right-color: $slider-tooltip-color;
+        }
+        .tooltip-inner {
+            background-color: $slider-tooltip-color;
+        }
+        .tooltip.in {
+            opacity: 1;
+        }
+    }
+
+    .slider-fw .slider {
+        width: 100%;
+    }
+
+
+    // Chosen MULTIPLE
+    $multiple-tag-bg: #f5f6f7;
+
+    .chosen-container {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .chosen-container-multi .chosen-choices {
+        @include form-control();
+        font-size: 0.875rem;
+        height: 35px;
+    }
+
+    .chosen-container-multi .chosen-choices li.search-field input[type=text] {
+        height: auto;
+        padding: 0;
+    }
+
+    .chosen-container-multi .chosen-choices li.search-choice {
+        margin: 0 5px 3px 0;
+        background-color: $multiple-tag-bg;
+        border: 1px solid darken($multiple-tag-bg, 5%);
+        background-image: none;
+    }
+
+    .chosen-container .chosen-results li.highlighted {
+        background-color: #a1a2a3;
+        background-image: none;
+    }
+    .chosen-container .chosen-drop {
+        border-color: #ddd;
+    }
+    .chosen-container .chosen-results li.group-result {
+        color: #747576;
+        letter-spacing: 0.02em;
+    }
+    // Chosen SINGLE
+    .chosen-container-single .chosen-single,
+    .chosen-container-active.chosen-with-drop .chosen-single {
+        @include form-control();
+        font-size: 0.875rem;
+        height: 35px;
+        box-shadow: 0 0 0 #000;
+    }
+    .chosen-search-input { border: 0 }
+    .chosen-container-active .chosen-single,
+    .chosen-container-active .chosen-choices {
+        border: 1px solid $input-focus-border-color;
+        box-shadow: 0 0 0 #000;
+    }
+
+    .chosen-container-single .chosen-drop {
+        margin-top: -3px;
+    }
+
+    .chosen-container-single .chosen-single div {
+        top: 6px;
+        right: 5px;
+    }
+
+    .chosen-container-multi .chosen-choices li.search-field input[type=text] {
+        color: $input-placeholder-color;
+    }
+
+    // Filestyle
+    .bootstrap-filestyle {
+        max-width: 380px;
+    }
+
+    // Select 2
+    .select2-container {
+        max-width: 100%;
+    }
+    .select2-container--bootstrap4 .select2-selection--single {
+        height: 35px !important;
+        .select2-selection__rendered,
+        .select2-selection__placeholder {
+            line-height: 35px !important;
+        }
+    }
+    .select2-container--bootstrap4 .select2-selection,
+    .select2-container--bootstrap4.select2-container--focus .select2-selection {
+        border: 1px solid $input-border-color;
+        box-shadow: 0 0 0 #000 !important;
+    }
+    .select2-container--bootstrap4 .select2-selection--multiple .select2-selection__rendered {
+        padding: 4px 5px;
+    }
+    .select2-dropdown {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .select2-container--bootstrap4 .select2-selection__clear {
+        margin-top: .65em;
+    }
+}

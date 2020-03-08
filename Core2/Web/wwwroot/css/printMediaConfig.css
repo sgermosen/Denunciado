@@ -1,0 +1,177 @@
+﻿@media print {
+    [class*="col-sm-"] {
+        float: left;
+    }
+
+    [class*="col-xs-"] {
+        float: left;
+    }
+
+    .col-sm-12, .col-xs-12 {
+        width: 100% !important;
+    }
+
+    .col-sm-11, .col-xs-11 {
+        width: 91.66666667% !important;
+    }
+
+    .col-sm-10, .col-xs-10 {
+        width: 83.33333333% !important;
+    }
+
+    .col-sm-9, .col-xs-9 {
+        width: 75% !important;
+    }
+
+    .col-sm-8, .col-xs-8 {
+        width: 66.66666667% !important;
+    }
+
+    .col-sm-7, .col-xs-7 {
+        width: 58.33333333% !important;
+    }
+
+    .col-sm-6, .col-xs-6 {
+        width: 50% !important;
+    }
+
+    .col-sm-5, .col-xs-5 {
+        width: 41.66666667% !important;
+    }
+
+    .col-sm-4, .col-xs-4 {
+        width: 33.33333333% !important;
+    }
+
+    .col-sm-3, .col-xs-3 {
+        width: 25% !important;
+    }
+
+    .col-sm-2, .col-xs-2 {
+        width: 16.66666667% !important;
+    }
+
+    .col-sm-1, .col-xs-1 {
+        width: 8.33333333% !important;
+    }
+
+    .col-sm-1,
+    .col-sm-2,
+    .col-sm-3,
+    .col-sm-4,
+    .col-sm-5,
+    .col-sm-6,
+    .col-sm-7,
+    .col-sm-8,
+    .col-sm-9,
+    .col-sm-10,
+    .col-sm-11,
+    .col-sm-12,
+    .col-xs-1,
+    .col-xs-2,
+    .col-xs-3,
+    .col-xs-4,
+    .col-xs-5,
+    .col-xs-6,
+    .col-xs-7,
+    .col-xs-8,
+    .col-xs-9,
+    .col-xs-10,
+    .col-xs-11,
+    .col-xs-12 {
+        float: left !important;
+    }
+
+    body {
+        margin: 0;
+        padding: 0 !important;
+        min-width: 768px;
+    }
+
+    .container {
+        width: auto;
+        min-width: 750px;
+    }
+
+    body {
+        font-size: 10px;
+    }
+
+    a[href]:after {
+        content: none;
+    }
+
+    .noprint,
+    div.alert,
+    header,
+    .group-media,
+    .btn,
+    .footer,
+    form,
+    #comments,
+    .nav,
+    ul.links.list-inline,
+    .hideOnPrint,
+    ul.action-links {
+        display: none !important;
+    }
+
+    .print_areax {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 9999;
+        background-color: #ffffff;
+    }
+    .myHeaderOnPrint {
+        display:block
+    }
+    .content-heading {
+        display: none;
+    }
+    .wrapper > footer {
+        display:none
+    }
+    .pagebreak {
+        page-break-before: always;
+    }
+    /*.pagebreak {
+        clear: both;
+        page-break-after: always;
+    }*/
+    /* page-break-after works, as well */
+}
+
+.label {
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.contents {
+    border: 1px dotted black;
+    padding: 5px;
+    width: 300px;
+}
+
+.name {
+    color: #18B5F0;
+}
+
+.left {
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+
+.right {
+    margin-left: 60px;
+    line-height: 50px;
+}
+
+.clear {
+    clear: both;
+}
+
+ 

@@ -1,0 +1,85 @@
+/* ========================================================================
+     Component: form-datepicker
+ ========================================================================== */
+
+.datepicker {
+    padding: .5rem;
+    th {
+        font-size: 0.875rem !important;
+    }
+}
+
+.datepicker table tr td {
+    &.today,
+    &.today:hover,
+    &.today.disabled,
+    &.today.disabled:hover,
+    &.selected,
+    &.selected:hover,
+    &.selected.disabled,
+    &.selected.disabled:hover,
+    & span.active,
+    & span.active:hover,
+    & span.active.disabled,
+    & span.active.disabled:hover {
+        background-image: none;
+    }
+}
+
+.datepicker table tr td span.active {
+
+    &:hover,
+    &:hover:hover,
+    &.disabled:hover,
+    &.disabled:hover:hover,
+    &:active,
+    &:hover:active,
+    &.disabled:active,
+    &.disabled:hover:active,
+    &.active,
+    &:hover.active,
+    &.disabled.active,
+    &.disabled:hover.active,
+    &.disabled,
+    &:hover.disabled,
+    &.disabled.disabled,
+    &.disabled:hover.disabled,
+    &[disabled],
+    &:hover[disabled],
+    &.disabled[disabled],
+    &.disabled:hover[disabled] {
+        background-color: $primary;
+    }
+}
+
+.datepicker table tr td.active {
+    &,
+    &:hover,
+    &.disabled,
+    &.disabled:hover {
+        background-color: $primary !important;
+        background-image: none;
+        box-shadow: none;
+        text-shadow: none;
+    }
+}
+
+.datepicker thead tr:first-child th:hover,
+.datepicker tfoot tr th:hover {
+    background-color: $gray-light;
+}
+
+.datepicker-inline {
+    border: 0.125rem solid $gray-light;
+}
+
+.datepicker table tr td.active {
+    &,
+    &:hover,
+    &.disabled,
+    &.disabled:hover {
+        background-color: $primary !important;
+        background-image: none;
+        box-shadow: none;
+    }
+}

@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Sistema de Registros Medicos">
+    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin, medical, records, medical record system, historia clinica, sistema de hospitales, aplicacion movil">
+    <title>@ViewData["Title"] - Sistema de Registros Medicos</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Place styles for plugins -->
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
+
+    <environment names="Development">
+        <!-- =============== VENDOR STYLES ===============-->
+        <link href='~/vendor/@@fortawesome/fontawesome-free/css/brands.css' rel="stylesheet" />
+        <link href='~/vendor/@@fortawesome/fontawesome-free/css/regular.css' rel="stylesheet" />
+        <link href='~/vendor/@@fortawesome/fontawesome-free/css/solid.css' rel="stylesheet" />
+        <link href='~/vendor/@@fortawesome/fontawesome-free/css/fontawesome.css' rel="stylesheet" />
+        <link href="~/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+        <link href="~/vendor/animate.css/animate.css" rel="stylesheet" />
+        <link href="~/vendor/whirl/dist/whirl.css" rel="stylesheet" />
+        <!-- =============== BOOTSTRAP STYLES ===============-->
+        <link href="~/css/bootstrap.css" rel="stylesheet" id="bscss" />
+        <!-- =============== APP STYLES ===============-->
+        <link href="~/css/app.css" rel="stylesheet" asp-append-version="true" id="maincss" />
+    </environment>
+    <environment names="Staging,Production">
+        <!-- =============== VENDOR STYLES ===============-->
+        <link href='~/vendor/@@fortawesome/fontawesome-free/css/brands.css' rel="stylesheet" />
+        <link href='~/vendor/@@fortawesome/fontawesome-free/css/regular.css' rel="stylesheet" />
+        <link href='~/vendor/@@fortawesome/fontawesome-free/css/solid.css' rel="stylesheet" />
+        <link href='~/vendor/@@fortawesome/fontawesome-free/css/fontawesome.css' rel="stylesheet" />
+        <link href="~/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+        <link href="~/vendor/animate.css/animate.css" rel="stylesheet" />
+        <link href="~/vendor/whirl/dist/whirl.css" rel="stylesheet" />
+        <!-- =============== BOOTSTRAP STYLES ===============-->
+        <link href="~/css/bootstrap.css" rel="stylesheet" id="bscss" />
+        <!-- =============== APP STYLES ===============-->
+        <link href="~/css/app.css" rel="stylesheet" asp-append-version="true" id="maincss" />
+    </environment>
+
+
+</head>
+<body class="layout-h">
+    <div class="wrapper">
+        <!-- top navbar-->
+        <header class="topnavbar-wrapper">
+            <partial name="_TopNavbarHorizontal" />
+        </header>
+        <!-- offsidebar-->
+        <aside class="offsidebar d-none">
+            <partial name="_Offsidebar" />
+        </aside>
+        <!-- Main section-->
+        <section class="section-container">
+            <!-- Page content-->
+            <div class="content-wrapper">
+                <partial name="_CookieConsentPartial" />
+                @RenderBody()
+            </div>
+        </section>
+        <!-- Page footer-->
+        <footer class="footer-container">
+            <partial name="_Footer" />
+        </footer>
+    </div>
+
+    @if (IsSectionDefined("BodyArea"))
+    {
+        @RenderSection("BodyArea", required: false)
+    }
+
+    <environment names="Development">
+
+        <!-- =============== VENDOR SCRIPTS ===============-->
+
+        <script src="~/vendor/modernizr/modernizr.custom.js"></script>
+        <script src="~/vendor/js-storage/js.storage.js"></script>
+        <script src="~/vendor/screenfull/dist/screenfull.js"></script>
+        <script src="~/vendor/i18next/i18next.js"></script>
+        <script src="~/vendor/i18next-xhr-backend/i18nextXHRBackend.js"></script>
+        <script src="~/vendor/jquery/dist/jquery.js"></script>
+        <script src="~/vendor/popper.js/dist/umd/popper.js"></script>
+        <script src="~/vendor/bootstrap/dist/js/bootstrap.js"></script>
+
+        <!-- Wrapper -->
+        <script src="~/master/js/modules/common/wrapper.js"></script>
+        <!-- App init -->
+        <script src="~/master/js/app.init.js"></script>
+        <!-- Modules -->
+        <script src="~/master/js/modules/charts/chart-knob.js"></script>
+        <script src="~/master/js/modules/charts/chart.js"></script>
+        <script src="~/master/js/modules/charts/chartist.js"></script>
+        <script src="~/master/js/modules/charts/easypiechart.js"></script>
+        <script src="~/master/js/modules/charts/flot.js"></script>
+        <script src="~/master/js/modules/charts/morris.js"></script>
+        <script src="~/master/js/modules/charts/rickshaw.js"></script>
+        <script src="~/master/js/modules/charts/sparkline.js"></script>
+        <script src="~/master/js/modules/common/bootstrap-start.js"></script>
+        <script src="~/master/js/modules/common/card-tools.js"></script>
+        <script src="~/master/js/modules/common/constants.js"></script>
+        <script src="~/master/js/modules/common/fullscreen.js"></script>
+        <script src="~/master/js/modules/common/load-css.js"></script>
+        <script src="~/master/js/modules/common/localize.js"></script>
+        <script src="~/master/js/modules/common/navbar-search.js"></script>
+        <script src="~/master/js/modules/common/now.js"></script>
+        <script src="~/master/js/modules/common/rtl.js"></script>
+        <script src="~/master/js/modules/common/sidebar.js"></script>
+        <script src="~/master/js/modules/common/slimscroll.js"></script>
+        <script src="~/master/js/modules/common/table-checkall.js"></script>
+        <script src="~/master/js/modules/common/toggle-state.js"></script>
+        <script src="~/master/js/modules/common/trigger-resize.js"></script>
+        <script src="~/master/js/modules/elements/cards.js"></script>
+        <script src="~/master/js/modules/elements/nestable.js"></script>
+        <script src="~/master/js/modules/elements/notify.js"></script>
+        <script src="~/master/js/modules/elements/porlets.js"></script>
+        <script src="~/master/js/modules/elements/sortable.js"></script>
+        <script src="~/master/js/modules/elements/sweetalert.js"></script>
+        <script src="~/master/js/modules/extras/calendar.js"></script>
+        <script src="~/master/js/modules/extras/jqcloud.js"></script>
+        <script src="~/master/js/modules/extras/search.js"></script>
+        <script src="~/master/js/modules/forms/color-picker.js"></script>
+        <script src="~/master/js/modules/forms/forms.js"></script>
+        <script src="~/master/js/modules/forms/imagecrop.js"></script>
+        <script src="~/master/js/modules/forms/select2.js"></script>
+        <script src="~/master/js/modules/forms/upload.js"></script>
+        <script src="~/master/js/modules/forms/wizard.js"></script>
+        <script src="~/master/js/modules/forms/xeditable.js"></script>
+        <script src="~/master/js/modules/maps/gmap.js"></script>
+        <script src="~/master/js/modules/maps/vector.map.demo.js"></script>
+        <script src="~/master/js/modules/maps/vector.map.js"></script>
+        <script src="~/master/js/modules/pages/pages.js"></script>
+        <script src="~/master/js/modules/tables/bootgrid.js"></script>
+        <script src="~/master/js/modules/tables/datatable.js"></script>
+        <!-- Custom -->
+        <script src="~/master/js/custom/custom.js"></script>
+
+    </environment>
+
+    <environment names="Staging,Production">
+
+        <!-- =============== VENDOR SCRIPTS ===============-->
+
+        <script src="~/vendor/modernizr/modernizr.custom.js"></script>
+        <script src="~/vendor/js-storage/js.storage.js"></script>
+        <script src="~/vendor/screenfull/dist/screenfull.js"></script>
+        <script src="~/vendor/i18next/i18next.js"></script>
+        <script src="~/vendor/i18next-xhr-backend/i18nextXHRBackend.js"></script>
+        <script src="~/vendor/jquery/dist/jquery.js"></script>
+        <script src="~/vendor/popper.js/dist/umd/popper.js"></script>
+        <script src="~/vendor/bootstrap/dist/js/bootstrap.js"></script>
+
+        <!-- =============== APP SCRIPTS ===============-->
+
+        <script src="~/js/app.js"></script>
+
+    </environment>
+
+    <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+

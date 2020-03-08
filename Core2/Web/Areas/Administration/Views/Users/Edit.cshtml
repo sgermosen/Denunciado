@@ -1,0 +1,151 @@
+﻿@using Denounces.Domain.Helpers;
+@model Denounces.Web.Areas.Administration.Models.EmployeeView
+
+@{
+    ViewData["Title"] = "Modificar Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<hr />
+<form asp-action="Edit"   enctype="multipart/form-data">
+    <div class="container-fluid">
+        <input type="hidden" asp-for="Id"/>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row ">
+            <div class="col-sm-4">
+                <label asp-for="Record2" class="control-label">Codigo</label>
+                <input asp-for="Record2" class="form-control" />
+                <span asp-validation-for="Record2" class="text-danger"></span>
+            </div>
+            <div class="col-sm-4">
+                <label asp-for="Record" class="control-label">Secuencia</label>
+                <input asp-for="Record" class="form-control" readonly="readonly" />
+                <span asp-validation-for="Record" class="text-danger"></span>
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <label asp-for="Name" class="control-label">Nombre   <a style="color:red">(*)</a></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="col-sm-4">
+                <label asp-for="Lastname" class="control-label">Apellido   <a style="color:red">(*)</a></label>
+                <input asp-for="Lastname" class="form-control" />
+                <span asp-validation-for="Lastname" class="text-danger"></span>
+            </div>
+            <div class="col-sm-4">
+                <label asp-for="Rnc" class="control-label">
+                    Cedula
+                    <a style="color:red">(*)</a>
+                </label>
+                <input asp-for="Rnc" class="form-control" />
+                <span asp-validation-for="Rnc" class="text-danger"></span>
+            </div>
+            
+            <div class="col-sm-4">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" type="date" />
+
+            </div>
+
+            <div class="col-sm-2">
+                <label asp-for="Gender" class="control-label"></label>
+                <select asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()" class="form-control">
+                    <option selected="selected" value="">Seleccione una Opcion</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="col-sm-2">
+                <label asp-for="Country" class="control-label"></label>
+                <select asp-for="CountryId"
+                        asp-items="Model.Countries"
+                        class="form-control"></select>
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+            <div class="col-sm-2">
+                <label asp-for="MaritalSituation" class="control-label"></label>
+                <select asp-for="MaritalSituation" asp-items="Html.GetEnumSelectList<MaritalSituation>()" class="form-control">
+                    <option selected="selected" value="">Seleccione una Opcion</option>
+                </select>
+                <span asp-validation-for="MaritalSituation" class="text-danger"></span>
+            </div>
+            <div class="col-sm-2">
+                <label asp-for="Ocupation" class="control-label"></label>
+                <select asp-for="OcupationId"
+                        asp-items="Model.Ocupations"
+                        class="form-control"></select>
+                <span asp-validation-for="Ocupation" class="text-danger"></span>
+            </div>
+          
+            <div class="col-sm-2">
+                <label asp-for="SchoolLevel" class="control-label">Escolaridad</label>
+                <select asp-for="SchoolLevelId"
+                        asp-items="Model.SchoolLevels"
+                        class="form-control"></select>
+                <span asp-validation-for="SchoolLevel" class="text-danger"></span>
+            </div>
+            
+            <div class="col-sm-2">
+                <label asp-for="PhoneNumber" class="control-label">Telefono </label>
+                <input asp-for="PhoneNumber" class="form-control Tel" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="col-sm-4">
+                <label asp-for="Email" class="control-label">Email  <a style="color:red">(*)</a></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class=" col-sm-4">
+                <label asp-for="Address" class="control-label"> Direccion   <a style="color:red">(*)</a></label>
+                <textarea asp-for="Address" class="form-control"></textarea>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="col-sm-4">
+
+                <label asp-for="Imagen" class="control-label"></label>
+                <div>
+                    <input asp-for="ImageFile" class="form-control filestyle"
+                           type="file" data-classbutton="btn btn-secondary"
+                           data-classinput="form-control inline"
+                           data-icon="&lt;span class='fa fa-upload mr'&gt;&lt;/span&gt;" />
+                </div>
+                <span asp-validation-for="Imagen" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group col-md-3">
+                <label class="control-label">Sueldo</label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+
+
+        </div>
+        <div class="row">
+
+        </div>
+        <br /><br />
+        <div class="row text-center">
+            <div class=" col-sm-12">
+
+                <a asp-action="Index" class="btn btn-lg btn-warning">
+                    <i class="fa fa-times "></i> Cancelar y Volver Atras
+                </a>
+                <button type="submit" class="btn btn-lg btn-primary">
+                    <i class="fa fa-save"></i> Guardar y Procesar Cambios
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

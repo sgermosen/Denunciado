@@ -1,0 +1,71 @@
+/*!
+ *
+ * Mersy - Sistema de Registros Medicos
+ *
+ * Version: 4.2.2
+ * Author: @themicon_co
+ * Website: http://themicon.co
+ * License: https://wrapbootstrap.com/help/licenses
+ *
+ */
+
+// Bootstrap
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+// Variables
+@import "app/common/variables";
+// Layout
+@import "app/layout/layout";
+@import "app/layout/layout-extra";
+@import "app/layout/layout-animation";
+@import "app/layout/top-navbar";
+@import "app/layout/sidebar";
+@import "app/layout/offsidebar";
+@import "app/layout/user-block";
+@import "app/layout/settings";
+// Common
+@import "app/common/typo";
+@import "app/common/bootstrap-reset";
+@import "app/common/bootstrap-custom";
+@import "app/common/button-extra";
+@import "app/common/placeholder";
+@import "app/common/cards";
+@import "app/common/circles";
+@import "app/common/dropdown-extra";
+@import "app/common/half-float";
+@import "app/common/animate";
+@import "app/common/slim-scroll";
+@import "app/common/inputs";
+@import "app/common/utils";
+@import "app/common/print";
+// Elements
+@import "app/elements/nestable";
+@import "app/elements/notify";
+@import "app/elements/spinner";
+@import "app/elements/portlets";
+// Charts
+@import "app/charts/radial-bar";
+@import "app/charts/chart-flot";
+@import "app/charts/chart-easypie";
+// Form elements
+@import "app/forms/form-validation";
+@import "app/forms/form-tags";
+@import "app/forms/form-datepicker";
+@import "app/forms/form-wizard";
+@import "app/forms/form-imgcrop";
+@import "app/forms/dropzone";
+@import "app/forms/plugins";
+// Tables
+@import "app/tables/datatable";
+@import "app/tables/table-extras";
+@import "app/tables/bootgrid";
+// Maps
+@import "app/maps/gmap";
+@import "app/maps/vector-map";
+// Extras
+@import "app/extras/timeline";
+@import "app/extras/todo";
+@import "app/extras/calendar";
+@import "app/extras/mailbox";
+@import "app/extras/plans";

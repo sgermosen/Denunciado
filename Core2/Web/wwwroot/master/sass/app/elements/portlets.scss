@@ -1,0 +1,35 @@
+/* ========================================================================
+     Component: portlets
+ ========================================================================== */
+
+// A minimum height is necessary
+// to allow empty cols accept portlets
+[data-toggle="portlet"] {
+
+    min-height: 30px; // Manually choose which element
+    // shows a pointer to indicate drag
+    &.portlet-handler,
+    .portlet-handler {
+        cursor: move;
+    }
+}
+
+.portlets-wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: auto;
+}
+
+// jqueryUI controls the height, so we reuse
+// the placeholder component with zero padding
+// .portlet is just to detect the portlet instance
+.portlet.box-placeholder {
+
+    padding: 0;
+}
+
+// Sometimes some element shouldn't trigger a drag
+// add this class to any element to cancel drag
+.portlet-cancel {}

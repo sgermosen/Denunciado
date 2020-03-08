@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Administracion General";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+
+    <div class="col-md-4">
+        <a asp-action="Index"
+           asp-controller="School"
+           asp-area="School"
+           class="btn btn-light"
+           style="width: 100%; text-align: left">
+            <img src="~/images/Icons/school.png" width="60" height="60" align="middle"/>
+            <span style="font-size: large; font-weight: bold">
+                Escuelas
+            </span>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a asp-action="Index"
+           asp-controller="Courses"
+           asp-area="School"
+           class="btn btn-light"
+           style="width: 100%; text-align: left">
+            <img src="~/images/Icons/Course.png" width="60" height="60" align="middle"/>
+            <span style="font-size: large; font-weight: bold">
+                Cursos
+            </span>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a asp-action="Index"
+           asp-controller="Subjects"
+           asp-area="School"
+           class="btn btn-light"
+           style="width: 100%; text-align: left">
+            <img src="~/images/Icons/Subject.png" width="60" height="60" align="middle"/>
+            <span style="font-size: large; font-weight: bold">
+                Materias
+            </span>
+        </a>
+    </div>
+
+    <div class="col-md-4">
+        <a asp-action="Index"
+           asp-controller="Users"
+           asp-area="Administration"
+           class="btn btn-light"
+           style="width: 100%; text-align: left">
+            <img src="~/images/Icons/users2.png" width="60" height="60" align="middle"/>
+            <span style="font-size: large; font-weight: bold">
+                Usuarios
+            </span>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a asp-action="Index"
+           asp-controller="Materials"
+           asp-area="Fund"
+           class="btn btn-light"
+           style="width: 100%; text-align: left">
+            <img src="~/images/Icons/Materials.png" width="60" height="60" align="middle"/>
+            <span style="font-size: large; font-weight: bold">
+                Mant. de Inventario
+            </span>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a asp-action="Index"
+           asp-controller="MemberTypes"
+           asp-area="Fund"
+           class="btn btn-light"
+           style="width: 100%; text-align: left">
+            <img src="~/images/Icons/mType.png" width="60" height="60" align="middle"/>
+            <span style="font-size: large; font-weight: bold">
+                Tipos de Miembros
+            </span>
+        </a>
+    </div>
+    
+    <div class="col-md-4">
+        <a asp-action="Index"
+           asp-controller="Zones"
+           asp-area="Administration"
+           class="btn btn-light"
+           style="width: 100%; text-align: left">
+            <img src="~/images/Icons/place.png" width="60" height="60" align="middle"/>
+            <span style="font-size: large; font-weight: bold">
+                Zonas/Areas
+            </span>
+        </a>
+    </div>
+</div>

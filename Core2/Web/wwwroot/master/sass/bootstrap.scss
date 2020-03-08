@@ -1,0 +1,8 @@
+//
+// This file compiles to a custom bootstrap stylesheet for Mersy
+//
+
+// Override bootstrap variables
+@import "app/common/variables";
+// Bootstrap
+@import "bootstrap/bootstrap";

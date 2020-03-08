@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<div class="abs-center wd-xl">
+    <!-- START card-->
+    <div class="d-flex justify-content-center">
+        <div class="p-2">
+            <img class="img-fluid img-thumbnail rounded-circle" src="~/images/logo.png" alt="Logo Mersy" width="60" height="60" />
+        </div>
+    </div>
+    <div class="card b0">
+        <div class="card-body">
+            <p class="text-center">Porfavor, accede para desbloquear la pantalla</p>
+            <form>
+                <div class="form-group">
+                    <div class="input-group with-focus">
+                        <input class="form-control border-right-0" id="exampleInputEmail1" type="email" placeholder="Entroduzca su Email" autocomplete="off" required="required" />
+                        <div class="input-group-append">
+                            <span class="input-group-text text-muted bg-transparent border-left-0">
+                                <em class="fa fa-lock"></em>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    @*<div class="mt-1">
+                        <a class="text-muted" href="@Url.Action("Recover", "Pages")">
+                            <small>Olvidaste tu Contraseña?</small>
+                        </a>
+                    </div>*@
+                    <div class="ml-auto">
+                        <a class="btn btn-sm btn-primary" href="/">Desbloquear</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END card-->
+    <div class="p-3 text-center">
+        <span class="mr-2">&copy;</span>
+        <span>2019 Mersy Core</span>
+        <span class="mr-2">-</span>
+        <span>By PraySoft</span>
+        <br />
+        <span>Sistema de Administracion de Informacion Clinica Digital</span>
+    </div>
+</div>
+
+

@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\Trk\**" />
+    <EmbeddedResource Remove="Entities\Trk\**" />
+    <None Remove="Entities\Trk\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\Complaint.cs" />
+    <Compile Remove="Entities\ComplaintsType.cs" />
+    <Compile Remove="Entities\Country.cs" />
+    <Compile Remove="Entities\Ideology.cs" />
+    <Compile Remove="Entities\Ocupation.cs" />
+    <Compile Remove="Entities\Owner.cs" />
+    <Compile Remove="Entities\Person.cs" />
+    <Compile Remove="Entities\Province.cs" />
+    <Compile Remove="Entities\Religion.cs" />
+    <Compile Remove="Entities\SchoolLevel.cs" />
+    <Compile Remove="Helpers\OwnerTypes.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.EntityFrameworkCore">
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore\2.2.0\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Identity.Stores">
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.identity.stores\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Identity.Stores.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

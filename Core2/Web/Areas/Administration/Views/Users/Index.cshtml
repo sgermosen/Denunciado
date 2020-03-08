@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Denounces.Domain.Entities.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Listado de Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<p>
+    <a asp-action="Index" asp-controller="Options" class="btn btn-success">
+        <i class="fa fa-reply-all"></i>
+        Regresar al Inicio
+    </a>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="fa fa-plus"></i>
+        Registrar Nuevo Usuario
+    </a>
+</p>
+<h2 style="color:green">
+    @ViewBag.Msg
+</h2>
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Tel
+                    </th>
+                    @*<th>Es Profesor?</th>
+                        <th> Es Doctor?</th>*@
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @item.PhoneNumber
+                        </td>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.IsTeacher)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsDoctor)
+                            </td>*@
+
+                        <td>
+                            <a asp-action="ResetPass" class="btn btn-danger" asp-route-id="@item.Id">
+                                <i class="fa fa-exit"></i>
+                                Resetear Contraseña
+                            </a>
+                            <a asp-action="DisableUser" class="btn btn-danger" asp-route-id="@item.Id">
+                                <i class="fa fa-trash-alt"></i>
+                                Deshabilitar 
+                            </a>
+                            <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id">
+                                <i class="fa fa-pencil"></i>
+                                Modificar 
+                            </a>
+                            @*<a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id">
+                                    <i class="fa fa-pencil-alt"></i>
+                                    Roles del Usuario
+                                </a>
+
+
+                                <a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id">
+                                    <i class="fa fa-list"> </i>
+                                    Detalles e Informacion
+                                </a>*@
+                            @*<a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id">
+                                    <i class="fa fa-list"> </i>
+                                    Datos Como Doctor
+                                </a>*@
+
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

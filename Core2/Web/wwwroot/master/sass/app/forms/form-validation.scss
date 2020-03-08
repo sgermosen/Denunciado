@@ -1,0 +1,51 @@
+/* ========================================================================
+     Component: form-validation
+ ========================================================================== */
+
+//
+// Styles for validation results from Parsley
+//
+$label-error-color: $danger;
+
+.parsley-error {
+    border-color: $label-error-color!important;
+}
+
+.parsley-required,
+.parsley-type,
+.parsley-equalto {
+    color: $danger;
+}
+
+.parsley-errors-list {
+    display: none;
+    margin: 0;
+    padding: 0;
+
+    &.filled {
+        display: block;
+    }
+
+    >li {
+        font-size: 12px;
+        list-style: none;
+        color: $label-error-color;
+    }
+}
+
+// Auto color validation of input group
+// Support only input-group-append
+.input-group.with-focus {
+    .form-control {
+        transition: none;
+        &:focus+.input-group-append>.input-group-text {
+            border-color: $input-focus-border-color;
+        }
+        &.is-invalid+.input-group-append>.input-group-text {
+            border-color: $danger;
+        }
+        &.is-valid+.input-group-append>.input-group-text {
+            border-color: $success;
+        }
+    }
+}

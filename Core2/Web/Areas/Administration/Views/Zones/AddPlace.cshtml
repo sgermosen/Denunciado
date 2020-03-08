@@ -1,0 +1,72 @@
+﻿@model Place
+@{
+    ViewData["Title"] = "Registro de Lugar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="AddPlace">
+    <div class="container-fluid">
+        <input type="hidden" asp-for="ZoneId" />
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <label class="control-label"> Lugar </label>
+                <input asp-for="Name"
+                       class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+ 
+         
+        <br /><br />
+        <div class="row text-center">
+            <div class=" col-sm-12">
+
+                <a asp-action="Details"
+                   asp-route-id="@Model.ZoneId"
+                   class="btn btn-lg btn-warning">
+                    <i class="fa fa-times "></i>
+                    Cancelar y Volver Atras
+                </a>
+                <button type="submit" class="btn btn-lg btn-primary">
+                    <i class="fa fa-save"></i>
+                    Guardar y Procesar Cambios
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Styles {
+    <environment names="Development">
+
+        <link href="~/vendor/select2/dist/css/select2.css" rel="stylesheet" />
+        <link href="~/vendor/@@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css" rel="stylesheet">
+    </environment>
+    <environment names="Staging,Production">
+
+        <link href="~/vendor/select2/dist/css/select2.css" rel="stylesheet" />
+        <link href="~/vendor/@@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css" rel="stylesheet">
+    </environment>
+}
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <environment names="Development">
+        <script src="~/vendor/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
+
+        <script src="~/vendor/select2/dist/js/select2.full.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/vendor/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
+
+        <script src="~/vendor/select2/dist/js/select2.full.js"></script>
+    </environment>
+
+
+}

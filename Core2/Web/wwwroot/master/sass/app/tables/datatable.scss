@@ -1,0 +1,148 @@
+/* ========================================================================
+     Component: datatable
+ ========================================================================== */
+.dataTables_wrapper {
+    clear: both;
+}
+
+table.dataTable {
+    border-collapse: collapse !important;
+}
+
+// Search button
+.dataTables_filter {
+    text-align: center !important;
+
+    @include media-breakpoint-up(md) {
+        float: right;
+        text-align: right !important;
+    }
+
+    label > em {
+        color: inherit;
+    }
+
+    input {
+        border: 1px solid rgba(160, 160, 160, .25);
+        margin-left: 10px;
+        padding: 0.25rem .5rem;
+        color: inherit;
+    }
+
+}
+
+.dataTables_length {
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+        float: left;
+        // margin-bottom: 2rem;
+    }
+
+    select {
+        border: 1px solid rgba(160, 160, 160, .25);
+        margin-right: 10px;
+        padding: 0.25rem .5rem;
+        color: inherit;
+        width: 80px !important;
+    }
+
+}
+
+.dt-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: .5rem;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+        justify-content: start;
+        float: left;
+    }
+
+}
+
+// Info area
+.dataTables_info {
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+        float: left;
+    }
+
+    padding-top: .75rem;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    display: flex;
+    justify-content: center;
+
+    @include media-breakpoint-up(lg) {
+        justify-content: flex-end;
+    }
+
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    > a {
+        box-shadow: 0 0 0 #000 !important;
+    }
+
+    &.previous > a, &.next > a {
+    }
+
+    &.disabled > a {
+        color: $gray;
+    }
+
+}
+
+// Button info popup
+div.dt-button-info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    margin-top: -100px;
+    margin-left: -200px;
+    background-color: white;
+    border: 2px solid $gray;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    text-align: center;
+    z-index: 2100;
+
+    h2 {
+        padding: 0.5em;
+        margin: 0;
+        font-weight: normal;
+        border-bottom: 1px solid #ddd;
+        background-color: #f3f3f3;
+
+        &:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            color: $success;
+            margin-right: 8px;
+        }
+
+    }
+
+    > div {
+        padding: 1em;
+    }
+
+}
+
+// Key Tables
+table.dataTable th.focus, table.dataTable td.focus {
+    outline: 3px solid $primary;
+    outline-offset: -1px;
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+    color: $gray-dark;
+    border: 0;
+    box-shadow: 0 0 0 #000;
+    background-color: transparent;
+}

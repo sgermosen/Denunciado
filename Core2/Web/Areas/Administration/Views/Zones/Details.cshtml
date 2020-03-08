@@ -1,0 +1,163 @@
+﻿@model Denounces.Domain.Entities.Cor.Zone
+
+@{
+    ViewData["Title"] = "Detalle de Zona";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    p {
+        font-weight: bold;
+        font-size: large
+    }
+</style>
+<div class="container-fluid IsDetailForm">
+    <p>
+        <a asp-action="Index" class="btn btn-success">
+            <i class="fa fa-reply"> </i>
+            Volver al Listado
+        </a>
+        <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.Id">
+            <i class="fa fa-pencil-alt"></i>
+            Modificar Zona
+        </a>
+
+        <a asp-action="Delete" class="btn btn-danger" asp-route-id="@Model.Id">
+            <i class="fa fa-trash-alt"></i>
+            Eliminar 
+        </a>
+    </p>
+    <input type="hidden" asp-for="Id" />
+    <div class="row ">
+        <div class="col-sm-4">
+            <label asp-for="Name" class="control-label">Zona </label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+    </div>
+
+    <div id="CurrentParticipants">
+        <section class="PsSection"> <h2> Lugares (Habitaciones, Espacios, Aulas) </h2></section>
+        <div class="form-group">
+            <div class="row">
+                <p>
+                    <a asp-action="AddPlace"
+                       class="btn btn-primary"
+                       asp-route-id="@Model.Id">
+                        <i class="fa fa-plus"></i>
+                        Registrar Nuevo Lugar (Habitacion, Espacio, Aula)
+                    </a>
+                </p>
+            </div>
+            <div class="row">
+                @if (Model.Places.Count() > 0)
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Nombre
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+                                    <th>
+                                        Acciones
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.Places)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            @item.Name
+                                        </td>
+                                        <td>
+                                            @item.Status.Name
+                                        </td>
+
+                                        <td>
+
+                                            <a asp-action="DetailPlace" class="btn btn-info" asp-route-id="@item.Id">
+                                                <i class="fa fa-info"></i>
+                                                Detalle, Informacion y Ocupación
+                                            </a>
+
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+        <br />
+        <br />
+        
+
+    </div>
+  
+</div>
+
+
+@section Styles {
+    <environment names="Development">
+        <link href="~/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="~/vendor/bootstrap-slider/dist/css/bootstrap-slider.css" rel="stylesheet" />
+        <link href="~/vendor/chosen-js/chosen.css" rel="stylesheet" />
+
+        <link href="~/vendor/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css" rel="stylesheet" />
+        <link href="~/vendor/select2/dist/css/select2.css" rel="stylesheet" />
+        <link href="~/vendor/@@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css" rel="stylesheet">
+    </environment>
+    <environment names="Staging,Production">
+        <link href="~/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
+        <link href="~/vendor/bootstrap-slider/dist/css/bootstrap-slider.css" rel="stylesheet" />
+        <link href="~/vendor/chosen-js/chosen.css" rel="stylesheet" />
+
+        <link href="~/vendor/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.css" rel="stylesheet" />
+        <link href="~/vendor/select2/dist/css/select2.css" rel="stylesheet" />
+        <link href="~/vendor/@@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css" rel="stylesheet">
+    </environment>
+}
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <environment names="Development">
+        <script src="~/vendor/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
+        <script src="~/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></script>
+        <script src="~/vendor/chosen-js/chosen.jquery.js"></script>
+        <script src="~/vendor/bootstrap-slider/dist/bootstrap-slider.js"></script>
+        <script src="~/vendor/inputmask/dist/jquery.inputmask.bundle.js"></script>
+        <script src="~/vendor/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+        <script src="~/vendor/moment/min/moment-with-locales.js"></script>
+
+        <script src="~/vendor/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+        <script src="~/vendor/select2/dist/js/select2.full.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/vendor/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
+        <script src="~/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.js"></script>
+        <script src="~/vendor/chosen-js/chosen.jquery.js"></script>
+        <script src="~/vendor/bootstrap-slider/dist/bootstrap-slider.js"></script>
+        <script src="~/vendor/inputmask/dist/jquery.inputmask.bundle.js"></script>
+        <script src="~/vendor/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+        <script src="~/vendor/moment/min/moment-with-locales.js"></script>
+
+        <script src="~/vendor/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js"></script>
+        <script src="~/vendor/select2/dist/js/select2.full.js"></script>
+    </environment>
+
+    <script src="~/lib/Ps/PsDates.js"></script>
+      
+      
+}
+
+
+

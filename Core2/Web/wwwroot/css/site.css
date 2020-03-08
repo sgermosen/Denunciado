@@ -1,0 +1,328 @@
+﻿.IsDetailForm {
+}
+.control-label {
+
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+.MySection {
+    background-color: deepskyblue;
+    color: white;
+    width: auto;
+    text-align: center;
+}
+.BigTextArea {
+    width: 650px;
+    max-width: 100%;
+    height: auto;
+}
+.LogoNormalA {
+    width: 225px;
+    height: 225px;
+}
+.LogoNormal {
+    width: 250px;
+    height: 250px;
+    max-width: 100%;
+}
+.LogoMedio {
+    width: 90px;
+    height: 120px;
+    max-width: 100%;
+    height: auto;
+}
+.LogoMedioBajo {
+    width: 80px;
+    height: 80px;
+    max-width: 100%;
+    height: auto;
+}
+.LogoChico {
+    width: 60px;
+    height: 60px;
+    max-width: 100%;
+    height: auto;
+}
+table > thead {
+    background-color: #B0E2FF; 
+}
+
+
+table {
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 0.8em;
+}
+
+th {
+    font-size: 1.2em;
+    text-align: left;
+    border: none 0;
+    padding-left: 0;
+}
+
+    th a {
+        display: block;
+        position: relative;
+    }
+
+        th a:link, th a:visited, th a:active, th a:hover {
+            color: #333;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0;
+        }
+
+        th a:hover {
+            color: #000;
+        }
+
+    th.asc a, th.desc a {
+        margin-right: .75em;
+    }
+
+        th.asc a:after, th.desc a:after {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 0.75em;
+        }
+
+        th.asc a:after {
+            content: '▲';
+        }
+
+        th.desc a:after {
+            content: '▼';
+        }
+
+td {
+    padding: 0.25em 2em 0.25em 0;
+    border: 0 none;
+}
+
+tr.pager td {
+    padding: 0 0.25em 0 0;
+}
+
+/*.DisplayingFor {
+    color: cyan;
+    border-color: #357ebd;
+}
+
+
+.scroller {
+    width: auto;
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+
+
+.datatable td span {
+    max-width: 200px;
+    display: block;
+    overflow: hidden;
+}
+
+.td-limit {
+    max-width: 50px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.table.table {
+    clear: both;
+    padding-right: 1px;
+    max-width: none !important;
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+
+input,
+select {
+    max-width: 100%;
+    background-color: #FAFFBD;
+}
+
+textarea {
+    max-width: 100%;
+    background-color: #FAFFBD;
+}
+
+
+.purchaseinput {
+    width: 100px;
+}
+
+.purchaseproduct {
+    width: 225px;
+}
+
+.purchaserow {
+    width: 25%;
+}
+
+.actionsize {
+    width: 100px;
+    margin: 10px;
+}
+
+
+.pos-home {
+    background-color: #3a99bd;
+    width: auto;
+    height: auto;
+    padding: 5px 20px;
+
+}
+
+.pos-name {
+    font-size: 80px;
+    font-family: 'Segoe UI';
+    font-weight: bolder;
+    color: #ffffff;
+ 
+}
+
+table {
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 0.8em;
+}
+
+th {
+    font-size: 1.2em;
+    text-align: left;
+    border: none 0;
+    padding-left: 0;
+}
+
+    th a {
+        display: block;
+        position: relative;
+    }
+
+        th a:link, th a:visited, th a:active, th a:hover {
+            color: #333;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0;
+        }
+
+        th a:hover {
+            color: #000;
+        }
+
+    th.asc a, th.desc a {
+        margin-right: .75em;
+    }
+
+        th.asc a:after, th.desc a:after {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 0.75em;
+        }
+
+        th.asc a:after {
+            content: '▲';
+        }
+
+        th.desc a:after {
+            content: '▼';
+        }
+
+td {
+    padding: 0.25em 2em 0.25em 0;
+    border: 0 none;
+}
+
+tr.pager td {
+    padding: 0 0.25em 0 0;
+}
+
+
+.navbar {
+    margin-bottom: 0px !important;
+}
+
+*/
