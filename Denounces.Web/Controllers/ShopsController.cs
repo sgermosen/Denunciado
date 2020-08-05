@@ -2,8 +2,7 @@
 
 namespace Mersy.Web.Controllers
 {
-    using Domain.Entities.Cor;
-    using Infraestructure;
+    using Denounces.Infraestructure;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using System.Linq;

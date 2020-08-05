@@ -20,7 +20,7 @@ namespace Denounces.Web.Controllers.API
         private readonly IProposalRepository _proposalRepository;
         private readonly IProposalTypeRepository _proposalTypeRepository;
         private readonly IUserHelper _userHelper;
-        private readonly IConverterHelper _converterHelper;
+       // private readonly IConverterHelper _converterHelper;
 
         protected async Task<ApplicationUser> GetUserAsync()
         {

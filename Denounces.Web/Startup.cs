@@ -1,29 +1,20 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Domain.Entities;
-using Helpers;
-using Infraestructure;
-using Infraestructure.Extensions;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using Repositories.Contracts;
-using Repositories.Implementations.Cor;
 using System.Text;
+using Denounces.Infraestructure.Extensions;
+using Denounces.Domain.Entities;
+using Denounces.Web.Helpers;
+using Denounces.Infraestructure;
+using Denounces.Repositories.Contracts;
+using Denounces.Repositories.Implementations;
 
 namespace Denounces.Web
 {
