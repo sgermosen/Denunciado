@@ -1,9 +1,9 @@
-﻿using Denounces.Infraestructure;
-using Denounces.Repositories.Contracts;
-using System.Threading.Tasks;
-
-namespace Denounces.Repositories.Implementations.Cor
+﻿using System;
+namespace Denounces.Repositories.Implementations
 {
+    using Denounces.Infraestructure;
+    using Denounces.Repositories.Contracts;
+    using System.Threading.Tasks;
     using Domain.Entities;
 
     public class ProposalRepository : Repository<Proposal>, IProposalRepository

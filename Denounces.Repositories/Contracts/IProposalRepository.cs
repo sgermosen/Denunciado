@@ -1,4 +1,5 @@
-﻿namespace Denounces.Repositories.Contracts
+﻿using System;
+namespace Denounces.Repositories.Contracts
 {
     using Domain.Entities;
     using System.Threading.Tasks;

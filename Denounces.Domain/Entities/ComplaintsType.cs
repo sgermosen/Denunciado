@@ -10,12 +10,12 @@ namespace Denounces.Domain.Entities
     {
         [Required]
         [StringLength(15, ErrorMessage = "The field {0} can't have more than {1} and less than {2} characters", MinimumLength = 1)]
-        [Index("ComplaintType_Code_Index", IsUnique = true)]
+       // [Index("ComplaintType_Code_Index", IsUnique = true)]
         public string Code { get; set; }
 
         [Required]
         [StringLength(300, ErrorMessage = "The field {0} can't have more than {1} and less than {2} characters", MinimumLength = 5)]
-        [Index("ComplaintType_Description_Index", IsUnique = true)]
+        //[Index("ComplaintType_Description_Index", IsUnique = true)]
         public string Description { get; set; }
 
         public ICollection<Complaint> Complaints { get; set; }

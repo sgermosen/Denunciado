@@ -1,8 +1,8 @@
-﻿using Denounces.Infraestructure;
-using Denounces.Repositories.Contracts;
-
-namespace Denounces.Repositories.Implementations.Cor
+﻿using System;
+namespace Denounces.Repositories.Implementations
 {
+    using Denounces.Infraestructure;
+    using Denounces.Repositories.Contracts;
     using Domain.Entities;
 
     public class ProposalTypeRepository : Repository<ProposalType>, IProposalTypeRepository

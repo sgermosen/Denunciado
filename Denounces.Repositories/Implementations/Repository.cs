@@ -1,4 +1,5 @@
-﻿namespace Denounces.Repositories.Implementations
+﻿using System;
+namespace Denounces.Repositories.Implementations
 {
     using Infraestructure;
     using Domain.Helpers;
@@ -47,7 +48,7 @@
             return entity;
         }
 
-        
+
 
         public async Task<bool> DeleteAsync(TEntity entity)
         {
