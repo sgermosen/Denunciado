@@ -38,5 +38,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Areas\Administration\Views\Users\Edit.cshtml" />
+    <Content Remove="Areas\Administration\Views\Users\Create.cshtml" />
+    <Content Remove="Areas\Administration\Views\Users\Index.cshtml" />
   </ItemGroup>
 </Project>

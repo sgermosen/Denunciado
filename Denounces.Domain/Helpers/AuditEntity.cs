@@ -6,10 +6,7 @@
 
     public class AuditEntity : BaseEntity
     {
-        //public long Id { get; set; }
-
-        //public string Name { get; set; }
-
+        
         public bool Deleted { get; set; }
 
         public DateTime? CreatedAt { get; set; }
