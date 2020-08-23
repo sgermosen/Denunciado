@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Denounces.Domain.Entities
 {
-    public class ProposalType : AuditEntity,  IBaseEntity
+    public class ProposalType : BaseEntity
     {
 
           [Required]
