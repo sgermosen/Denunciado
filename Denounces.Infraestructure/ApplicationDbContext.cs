@@ -1,6 +1,7 @@
 ﻿namespace Denounces.Infraestructure
 {
     using Denounces.Domain.Helpers;
+    using Denounces.Infraestructure.EntityConfigurations.Cor;
     using Domain.Entities;
     using EntityConfigurations;
     using Infraestructure.Extensions;
@@ -40,20 +41,20 @@
             //};
 
             AddMyFilters(ref modelBuilder);
-            modelBuilder.ApplyConfiguration(new ApplicationUserConfig());
             //registering the configurations for all the classes
+
+            modelBuilder.ApplyConfiguration(new ApplicationUserConfig());
             //  new ApplicationUserConfig(modelBuilder.Entity<ApplicationUser>());
-            //new OwnerConfig(modelBuilder.Entity<Owner>());
-            //new ShopConfig(modelBuilder.Entity<Shop>());
-
+            new ProposalConfig(modelBuilder.Entity<Proposal>());
         }
-        public DbSet<Image> Images { get; set; }
 
-        public DbSet<Status> Status { get; set; }
+        public DbSet<Country> Countries { get; set; }
         public DbSet<Proposal> Proposals { get; set; }
+        public DbSet<ProposalFile> ProposalFiles { get; set; }
         public DbSet<ProposalType> ProposalTypes { get; set; }
+        public DbSet<Province> Provinces { get; set; }
+        public DbSet<Status> Status { get; set; }
         public DbSet<Vote> Votes { get; set; }
-
 
         public override int SaveChanges()
         {
@@ -130,11 +131,10 @@
             #region SoftDeleted
 
             //modelBuilder.Entity<ApplicationUser>().HasQueryFilter(x => x.Owner.Id == user.OwnerId && !x.Deleted);
-            modelBuilder.Entity<Image>().HasQueryFilter(x => !x.Deleted);
+            modelBuilder.Entity<ProposalFile>().HasQueryFilter(x => !x.Deleted);
             modelBuilder.Entity<Proposal>().HasQueryFilter(x => !x.Deleted);
             modelBuilder.Entity<ProposalType>().HasQueryFilter(x => !x.Deleted);
             modelBuilder.Entity<Vote>().HasQueryFilter(x => !x.Deleted);
-
 
             #endregion
         }

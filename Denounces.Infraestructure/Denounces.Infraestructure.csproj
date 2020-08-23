@@ -11,4 +11,7 @@
     <Compile Remove="Extensions\OrderExtensions.cs" />
     <Compile Remove="EntityConfigurations\Cor\ShopConfig.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Validations\" />
+  </ItemGroup>
 </Project>
