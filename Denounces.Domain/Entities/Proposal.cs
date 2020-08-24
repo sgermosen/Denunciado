@@ -9,19 +9,19 @@ namespace Denounces.Domain.Entities
     public class Proposal : AuditEntity, IBaseEntity
     {
 
-       // [StringLength(250, ErrorMessage = "The field {0} can't have more than {1} and less than {2} characters", MinimumLength = 10)]
+        // [StringLength(250, ErrorMessage = "The field {0} can't have more than {1} and less than {2} characters", MinimumLength = 10)]
         public string Address { get; set; } //where its happening this
 
         public long ProvinceId { get; set; }
         public Province Province { get; set; }
 
         //[Required]
-       // [MaxLength(2000)]
+        // [MaxLength(2000)]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; } //Resumen
 
-      //  [Required]
-      //  [MaxLength(5000)]
+        //  [Required]
+        //  [MaxLength(5000)]
         public string Details { get; set; } //Details/ Legal Mark not requied on complaint
 
         public DateTime? EndDate { get; set; }

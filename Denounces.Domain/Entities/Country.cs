@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Denounces.Domain.Helpers;
+﻿using Denounces.Domain.Helpers;
+using System.Collections.Generic;
 
 namespace Denounces.Domain.Entities
 {

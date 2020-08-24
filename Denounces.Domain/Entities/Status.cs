@@ -1,6 +1,5 @@
 ﻿using Denounces.Domain.Helpers;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace Denounces.Domain.Entities
 {
@@ -10,9 +9,5 @@ namespace Denounces.Domain.Entities
 
         public ICollection<Proposal> Proposals { get; set; }
 
-        public Status()
-        {
-            Proposals = new Collection<Proposal>();
-        }
     }
 }

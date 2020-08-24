@@ -8,7 +8,7 @@ namespace Denounces.Domain.Entities
     public class ProposalType : BaseEntity
     {
 
-          [Required]
+        [Required]
         [StringLength(300, ErrorMessage = "The field {0} can't have more than {1} and less than {2} characters", MinimumLength = 5)]
         public string Description { get; set; }
 

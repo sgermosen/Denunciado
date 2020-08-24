@@ -25,7 +25,7 @@
 
         [MaxLength(13)]
         public string Rnc { get; set; }
-         
+
         public string FullName => $"{Name} {Lastname}";
 
     }
