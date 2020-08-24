@@ -196,7 +196,6 @@
             //modelBuilder.Entity<ApplicationUser>().HasQueryFilter(x => x.Owner.Id == user.OwnerId && !x.Deleted);
             modelBuilder.Entity<ProposalFile>().HasQueryFilter(x => !x.Deleted);
             modelBuilder.Entity<Proposal>().HasQueryFilter(x => !x.Deleted);
-            modelBuilder.Entity<ProposalType>().HasQueryFilter(x => !x.Deleted);
             modelBuilder.Entity<Vote>().HasQueryFilter(x => !x.Deleted);
 
             #endregion

@@ -78,7 +78,7 @@ namespace Denounces.Web
             #region RepositoryScopes
 
             services.AddScoped<IProposalRepository, ProposalRepository>();
-            services.AddScoped<IProposalTypeRepository, ProposalTypeRepository>();
+           // services.AddScoped<IProposalTypeRepository, ProposalTypeRepository>();
             #endregion
 
             services.Configure<CookiePolicyOptions>(options =>

@@ -13,13 +13,14 @@ namespace Denounces.Web.Controllers
     public class ProposalsController : PsBaseController
     {
         private readonly IProposalRepository _proposalRepository;
-        private readonly IProposalTypeRepository _proposalTypeRepository;
+        //private readonly IProposalTypeRepository _proposalTypeRepository;
 
         public ProposalsController(ApplicationDbContext context, IProposalRepository proposalRepository,
-            IProposalTypeRepository proposalTypeRepository, IUserHelper userHelper, ICurrentUserFactory currentUser) : base(context, userHelper, currentUser)
+            //IProposalTypeRepository proposalTypeRepository,
+            IUserHelper userHelper, ICurrentUserFactory currentUser) : base(context, userHelper, currentUser)
         {
             _proposalRepository = proposalRepository;
-            _proposalTypeRepository = proposalTypeRepository;
+           // _proposalTypeRepository = proposalTypeRepository;
         }
 
         public IActionResult Index()
@@ -27,9 +28,9 @@ namespace Denounces.Web.Controllers
             return View(_proposalRepository.GetAll());
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            var types = _proposalTypeRepository.GetAll().ToList();
+            var types = await _proposalRepository.GetTypes();// _proposalTypeRepository.GetAll().ToList();
 
             var proposal = new ProposalCreateViewModel
             {

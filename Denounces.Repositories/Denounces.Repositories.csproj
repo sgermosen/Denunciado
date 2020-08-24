@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Contracts\IProposalTypeRepository.cs" />
+    <Compile Remove="Implementations\ProposalTypeRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Denounces.Domain\Denounces.Domain.csproj" />
     <ProjectReference Include="..\Denounces.Infraestructure\Denounces.Infraestructure.csproj" />
   </ItemGroup>

@@ -18,7 +18,7 @@ namespace Denounces.Web.Controllers.API
     public class ProposalsController : ControllerBase
     {
         private readonly IProposalRepository _proposalRepository;
-        private readonly IProposalTypeRepository _proposalTypeRepository;
+       // private readonly IProposalTypeRepository _proposalTypeRepository;
         private readonly IUserHelper _userHelper;
        // private readonly IConverterHelper _converterHelper;
 
@@ -28,13 +28,14 @@ namespace Denounces.Web.Controllers.API
         }
 
         public ProposalsController(ApplicationDbContext context, IProposalRepository proposalRepository,
-            IProposalTypeRepository proposalTypeRepository, IUserHelper userHelper, 
+          //  IProposalTypeRepository proposalTypeRepository,
+            IUserHelper userHelper, 
             ICurrentUserFactory currentUser,
             IConverterHelper converterHelper
 ) //: base(context, userHelper, currentUser)
         {
             _proposalRepository = proposalRepository;
-            _proposalTypeRepository = proposalTypeRepository;
+            //_proposalTypeRepository = proposalTypeRepository;
             _userHelper = userHelper;
         }
 
