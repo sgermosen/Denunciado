@@ -33,7 +33,7 @@ It has the same functionalities as the web portal, with the addition, that the a
 Movil Client
 --------------------------------
 Notes
-1. Each Denounce it's a Proposal Record on the database with a ProposalTypeId == 1, so, the Model Structure need to be checked on the Domain Before use a different Naming Convention
+1. Each Denounce it's a Proposal Record on the database with a ProposalTypeId == 1, so, the Model Structure need to be checked on the Domain Before use a different Naming Convention.
 2. Only a Registered Owner and Logged Use, Can Edit or Delete a Proposal, only if the Status is not In Revision by Legislators StatusId==3.
 3. For Anonimous Denounces We Need to Take Imei or Device ID.
 --------------------------------
